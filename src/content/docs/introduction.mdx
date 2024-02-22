@@ -3,14 +3,10 @@ title: Introduction
 description: Introduction
 ---
 
-import App from "/src/components/react/advancedButton.jsx";
-import AdvMd from "/src/components/react/advancedMarkdown.jsx";
+import Advanced from "/src/components/react/advancedMarkdown.jsx";
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-<App client:only/>
-
-
-<AdvMd client:only>
+<Advanced client:only>
 
 ## Introduction
 
@@ -30,7 +26,7 @@ hello
 :::danger
 hello
 :::
-</AdvMd>
+</Advanced>
 
 
 On supported platforms the `qbittorrent-nox-static.sh` will perform these three main tasks:

@@ -23,9 +23,9 @@ function App() {
 
     return (
         <div>
-            <label className="fuggo-label advanced-button">
+            <label className="myreact-label advanced-button">
                 <Toggle
-                    className="fuggo-toggle"
+                    className="myreact-toggle"
                     checked={toggle}
                     icons={{
                         checked: <GiBrain />,
@@ -44,7 +44,7 @@ function App() {
                         }
                     }}
                 ></Toggle>
-                <span className="fuggo-span">{toggle ? "Advanced" : "Basic"}</span>
+                <span className="myreact-span">{toggle ? "Advanced" : "Basic"}</span>
             </label>
         </div>
     );

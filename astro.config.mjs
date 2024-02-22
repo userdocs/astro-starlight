@@ -1,8 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
-// import AutoImport from "astro-auto-import";
-
 import { ExpressiveCodeTheme } from "@astrojs/starlight/expressive-code";
 import fs from "node:fs";
 
@@ -13,8 +11,6 @@ const jsoncString = fs.readFileSync(
   ),
   "utf-8"
 );
-
-import App from "/src/components/react/advancedButton.jsx";
 
 const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
@@ -28,12 +24,12 @@ export default defineConfig({
       experimentalReactChildren: true,
     }),
 
-    // AutoImport({
-    //   imports: ["./src/components/react/App.jsx"],
-    // }),
-
     starlight({
       title: "qbittorrent-nox-static",
+      components: {
+        // Override the default `SocialIcons` component.
+        Header: "./src/components/Header.astro",
+      },
       expressiveCode: {
         // Pass the theme to the `themes` option
         // (consider adding a dark and light theme for accessibility)

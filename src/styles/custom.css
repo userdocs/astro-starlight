@@ -194,16 +194,16 @@ article ul li::marker {
     padding: 5px 10px 5px 10px !important;
 }
 
-.fuggo-label {
+.myreact-label {
     padding-top: 6px;
     border: solid 2px var(--ifm-color-primary);
 }
 
-.fuggo-toggle {
+.myreact-toggle {
     margin-bottom: -5px;
 }
 
-.fuggo-span {
+.myreact-span {
     padding-left: 5px;
     position: relative;
     top: -1px;
@@ -220,13 +220,15 @@ article ul li::marker {
 
 .react-toggle-track-x {
     margin: auto !important;
+    margin-top: 4px !important;
+    margin-right: 3px !important
 }
 
 .react-toggle-track {
     background-color: var(--ifm-color-primary);
 }
 
-.navbar-sidebar__item .fuggo-label {
+.navbar-sidebar__item .myreact-label {
     display: none !important;
     margin: 12px !important;
 }
@@ -245,4 +247,38 @@ article ul li::marker {
 
 .hidden {
     display: none;
+}
+
+#global-react-toggle {
+    margin-top: 5px;
+    padding-left: 3.5em;
+    width: auto;
+    float: right;
+}
+
+.header {
+    /* margin-right: 10px; */
+    width: 100%;
+    float: left;
+    /* padding: 20px; */
+    border: 2px solid red;
+}
+
+.sl-flex .astro-kmkmnagf {
+    width: 80%;
+}
+
+@media only screen and (max-width: 767px) {
+    .sl-flex .astro-kmkmnagf {
+        width: auto;
+
+    }
+
+    #global-react-toggle {
+        width: auto;
+        margin-top: -30px;
+        /* float: right; */
+        padding-top: 3px;
+        padding-left: 45px;
+    }
 }
