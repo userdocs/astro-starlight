@@ -7,7 +7,10 @@ import { ExpressiveCodeTheme } from "@astrojs/starlight/expressive-code";
 import fs from "node:fs";
 
 const jsoncString = fs.readFileSync(
-  new URL(`./aura-soft-dark-soft-text-color-theme.json`, import.meta.url),
+  new URL(
+    `./src/themes/expressive-code/aura-soft-dark-soft-text-color-theme.json`,
+    import.meta.url
+  ),
   "utf-8"
 );
 
@@ -18,7 +21,8 @@ const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
 // https://astro.build/config
 export default defineConfig({
   site: "https://userdocs.github.io",
-  base: "/astro-starlight",
+  base: "/astro-starlight/",
+  trailingSlash: "always",
   integrations: [
     react({
       include: ["**/react/*"],

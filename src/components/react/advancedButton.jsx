@@ -3,16 +3,13 @@ import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { GiBrain } from "react-icons/gi";
 import { MdOutlineMenuBook } from "react-icons/md";
-// import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 function getToggled() {
-    //   if (!ExecutionEnvironment.canUseDOM) return false;
     const toggle = window.localStorage.getItem("advanced");
     return JSON.parse(toggle);
 }
 
 function setToggled(toggled) {
-    //   if (!ExecutionEnvironment.canUseDOM) return;
     const toggledJSON = JSON.stringify(toggled);
     window.localStorage.setItem("advanced", toggledJSON);
 }

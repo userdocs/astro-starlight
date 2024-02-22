@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-// import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 const AdvMd = ({ children }) => {
     const advanced = JSON.parse(window.localStorage.getItem("advanced"));
