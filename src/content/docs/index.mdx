@@ -1,0 +1,39 @@
+---
+title: qbittorrent-nox-static
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Fully static linux binaries for qbittorrent-nox.
+  image:
+    file: ../../assets/qbittorrent-new-light.svg
+  actions:
+    - text: Read the docs
+      link: /introduction
+      icon: right-arrow
+      variant: primary
+    - text: Hosted on Github
+      link: https://github.com/userdocs/qbittorrent-nox-static
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Cutting edge" icon="pencil">
+       Using the most current dependencies and tools to build the latest version of qbittorrent-nox
+	</Card>
+	<Card title="Static" icon="add-document">
+		Self contained fully static Linux binaries built using [custom musl cross toolchains](https://github.com/userdocs/qbt-musl-cross-make). No need to install any dependencies.
+
+        Works on any Linux distro and even on older distros like CentOS 6.
+
+	</Card>
+	<Card title="Github Workflows" icon="setting">
+		Taking full advantage of Github workflows to automate the build process and release new versions as soon as core dependencies are updated.
+
+        A mini ecosystem of supporting repos to make the process as reliable and automated as possible.
+	</Card>
+	<Card title="Easy to use" icon="open-book">
+		It just works. Easy to install or deploy. A few shell commands or use it in your docker container. A complicated problem made simple.
+	</Card>
+</CardGrid>
