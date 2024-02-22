@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 // import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 const AdvMd = ({ children }) => {
