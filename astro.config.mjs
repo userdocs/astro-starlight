@@ -17,6 +17,8 @@ const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://userdocs.github.io",
+  base: "/astro-starlight-repo",
   integrations: [
     react({
       include: ["**/react/*"],
