@@ -442,9 +442,8 @@ img.astro-jbfsktt5 {
     /* background-color: #86dcca; */
 }
 
-starlight-tabs div.expressive-code {
-    width: 70%;
 
-    /* .expressive-code {
-    width: ;
-} */
+#Advanced-class {
+    padding-top: 15px;
+    margin: auto;
+}
