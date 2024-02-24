@@ -25,12 +25,16 @@ else {
 console.log(input, test);
 
 var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+
 console.log(link);
+
 link.id = 'favicon';
 (link as HTMLLinkElement).type = 'image/png';
 (link as HTMLLinkElement).rel = 'shortcut icon';
 (link as HTMLLinkElement).href = `${test}`;
 document.getElementsByTagName('head')[0].appendChild(link);
+
+console.log(link);
 
 </script>
 
