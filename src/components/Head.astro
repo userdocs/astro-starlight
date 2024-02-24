@@ -13,13 +13,13 @@ var test = `./public/favicon-${input}.svg`;
 console.log(input, test);
 
 if (input == 'light') {
-    var test = "./public/favicon-primary-light.svg";
+    var test = "/astro-starlight/favicon-primary-light.svg";
 }
 else if (input == 'dark') {
-    var test = "./public/favicon-primary-dark.svg";
+    var test = "/astro-starlight/favicon-primary-dark.svg";
 }
 else {
-    var test = "./public/favicon-blue.svg";
+    var test = "/astro-starlight/favicon-blue.svg";
 }
 
 console.log(input, test);
@@ -31,8 +31,6 @@ link.id = 'favicon';
 (link as HTMLLinkElement).rel = 'shortcut icon';
 (link as HTMLLinkElement).href = `${test}`;
 document.getElementsByTagName('head')[0].appendChild(link);
-
-console.log(link);
 
 </script>
 
