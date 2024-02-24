@@ -329,3 +329,122 @@ div a img.astro-m46x6ez3 {
         font-size: 0.8em;
     }
 }
+
+@media (min-width: 72rem) {
+
+    .sl-markdown-content {
+        padding-right: 0px;
+        padding-left: 25px;
+    }
+
+    .right-sidebar-container:where(.astro-67yu43on) {
+        order: 1;
+        width: 15%;
+        min-width: 15%;
+    }
+
+    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
+        order: 2;
+        width: 80%;
+    }
+}
+
+@media (max-width: 1700px) {
+
+    .sl-markdown-content {
+        padding-right: 0px;
+        padding-left: 25px;
+    }
+
+    .right-sidebar-container:where(.astro-67yu43on) {
+        order: 1;
+        width: 25%;
+        min-width: 20%;
+    }
+
+    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
+        order: 2;
+        width: 75%;
+    }
+}
+
+@media (min-width: 1700px) {
+
+    .sl-markdown-content {
+        padding-right: 0px;
+        padding-left: 25px;
+    }
+
+    .right-sidebar-container:where(.astro-67yu43on) {
+        order: 1;
+        width: 5%;
+        min-width: 15%;
+    }
+
+    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
+        order: 2;
+        width: 85%;
+    }
+}
+
+@media (max-width: 1148px) {
+
+    .sl-markdown-content {
+        padding-right: 0px;
+        padding-left: 25px;
+    }
+
+    .right-sidebar-container:where(.astro-67yu43on) {
+        order: 1;
+        width: 5%;
+        min-width: 15%;
+    }
+
+    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
+        order: 2;
+        width: 100%;
+    }
+}
+
+site-search .astro-v37mnknz {
+    width: 100%;
+    max-width: none;
+}
+
+
+h1.astro-jbfsktt5 {
+    font-size: xx-large;
+}
+
+
+.astro-jbfsktt5 {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* font-size: larger; */
+}
+
+img.astro-jbfsktt5 {
+    padding: 0px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    width: 100%;
+    /* background-color: #86dcca; */
+}
+
+.sl-flex .copy .astro-jbfsktt5 {
+    padding: 0px;
+    /* background-color: #86dcca; */
+}
+
+.sl-flex .stack .astro-jbfsktt5 {
+    padding: 0px;
+    /* background-color: #86dcca; */
+}
+
+starlight-tabs div.expressive-code {
+    width: 70%;
+
+    /* .expressive-code {
+    width: ;
+} */
