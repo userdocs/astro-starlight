@@ -26,9 +26,13 @@ export default defineConfig({
 
     starlight({
       title: "qbittorrent-nox-static",
+      logo: {
+        src: "./public/logo-qbittorrent.svg",
+      },
       components: {
         // Override the default `SocialIcons` component.
         Header: "./src/components/Header.astro",
+        Head: "./src/components/Head.astro",
       },
       expressiveCode: {
         // Pass the theme to the `themes` option
@@ -56,6 +60,10 @@ export default defineConfig({
             {
               label: "Script Installation",
               link: "/script-installation",
+            },
+            {
+              label: "Script Usage",
+              link: "/script-usage",
             },
             {
               label: "Build Help",

@@ -4,6 +4,26 @@ description: Build Help
 ---
 
 ```bash
+echo $hi   # push ok
+echo "$hi" # push
+echo e     # push bad
+
+a a  # push bad
+a -a # push ok
+a $a # push ok
+a    # push ok
+
+_function test        # comment
+_function test $var   # comment
+_function test "$var" # comment
+
+_cmd grep -Eqom1 "(.*)[^/]" <(tar tf "${qbt_dl_file_path}")
+
+git commit --allow-empty -m "Initial commit" # commit
+git push git@github.com:user/repo origin     # push
+```
+
+```bash
 #!/usr/bin/env bash
 #
 # cSpell:includeRegExp #.*

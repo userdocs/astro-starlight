@@ -1,0 +1,39 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+
+<script>
+// const input = document.documentElement.dataset.theme;
+const input = document.documentElement.getAttribute('data-theme');
+console.log(input);
+
+var test = `./public/favicon-${input}.svg`;
+
+console.log(input, test);
+
+if (input == 'light') {
+    var test = "./public/favicon-orange.svg";
+}
+else if (input == 'dark') {
+    var test = "./public/favicon-green.svg";
+}
+else {
+    var test = "./public/favicon-red.svg";
+}
+
+console.log(input, test);
+
+var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+console.log(link);
+link.id = 'favicon';
+link.type = 'image/png';
+link.rel = 'shortcut icon';
+link.href = `${test}`;
+document.getElementsByTagName('head')[0].appendChild(link);
+
+console.log(link);
+
+</script>
+
+<Default {...Astro.props} ></Default>

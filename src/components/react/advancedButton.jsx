@@ -22,8 +22,8 @@ function App() {
     }, [toggle]);
 
     return (
-        <div>
-            <label className="myreact-label advanced-button">
+        <div className="astro-kmkmnagf">
+            <label className="myreact-label advanced-button ">
                 <Toggle
                     className="myreact-toggle"
                     checked={toggle}
@@ -44,7 +44,7 @@ function App() {
                         }
                     }}
                 ></Toggle>
-                <span className="myreact-span">{toggle ? "Advanced" : "Basic"}</span>
+                <span className="myreact-span astro-kmkmnagf">{toggle ? "" : ""}</span>
             </label>
         </div>
     );

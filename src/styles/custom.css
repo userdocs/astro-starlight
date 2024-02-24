@@ -264,21 +264,68 @@ article ul li::marker {
     /* border: 2px solid red; */
 }
 
-.sl-flex .astro-kmkmnagf {
+div.sl-flex.astro-kmkmnagf {
     width: 80%;
 }
 
-@media only screen and (max-width: 767px) {
-    .sl-flex .astro-kmkmnagf {
-        width: auto;
+.custom-details {
+    padding: 0px 10px 0px 10px;
+    background-color: #8a888823;
+    border-left: 1px solid var(--ifm-color-primary);
+    border-bottom: 1px solid var(--ifm-color-primary);
+}
 
+.custom-summary {
+    padding: 5px 0px 5px 10px;
+
+}
+
+.right-sidebar-container .astro-67yu43on {
+    margin-left: auto;
+    margin-right: 0;
+    width: auto;
+}
+
+.right-sidebar .astro-67yu43on {
+    width: 10%;
+}
+
+.main-pane .astro-67yu43on {}
+
+.content-panel .astro-7nkwcw3z {
+    max-width: auto;
+}
+
+div a span.astro-m46x6ez3 {
+    width: auto !important;
+    min-width: 290px !important;
+    font-size: 1em;
+}
+
+div a img.astro-m46x6ez3 {
+    max-width: 40px !important;
+    width: 2em !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+    div.sl-flex.astro-kmkmnagf {
+        width: 60%;
     }
 
-    #global-react-toggle {
-        width: auto;
-        margin-top: -30px;
-        /* float: right; */
-        padding-top: 3px;
-        padding-left: 45px;
+    div a span.astro-m46x6ez3 {
+        display: none !important;
+    }
+}
+
+@media (min-width: 50rem) {
+    div a span.astro-m46x6ez3 {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 80rem) {
+    div a span.astro-m46x6ez3 {
+        font-size: 0.8em;
     }
 }
