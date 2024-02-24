@@ -12,6 +12,8 @@ var test = `./public/favicon-${input}.svg`;
 
 console.log(input, test);
 
+// must use the html base, mine is /astro-starlight/ , and not the file path ./public/ since the latter only works in dev mode
+
 if (input == 'light') {
     var test = "/astro-starlight/favicon-primary-light.svg";
 }
