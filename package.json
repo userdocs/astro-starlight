@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.5.5",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/react": "^3.0.10",
-    "@astrojs/starlight": "^0.20.0",
+    "@astrojs/starlight": "^0.20.1",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.11",

@@ -21,7 +21,7 @@ function App() {
         setToggled(toggle);
     }, [toggle]);
 
-    const handleChange = (event) => {
+    const handleChange = () => {
         setToggle((prev) => !prev);
         for (let element of document.getElementsByClassName(
             "Advanced-class"
