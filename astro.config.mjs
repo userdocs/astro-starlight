@@ -25,9 +25,19 @@ export default defineConfig({
     }),
 
     starlight({
+      favicon: "/astro-starlight/favicon-blue.svg",
+      head: [
+        // // https://starlight.astro.build/reference/configuration/#head
+        // {
+        //   tag: "script",
+        //   content:
+        //     'document.addEventListener("DOMContentLoaded", function() {document.body.classList.add("body-custom");});',
+        //   defer: true,
+        // },
+      ],
       title: "qbittorrent-nox-static",
       logo: {
-        src: "./public/logo-qbittorrent.svg",
+        src: "./public/logo-static.svg",
       },
       components: {
         // Override the default `SocialIcons` component.
@@ -98,4 +108,19 @@ export default defineConfig({
       ],
     }),
   ],
+
+  // https://discord.com/channels/830184174198718474/1070481941863878697/1211398665101516842
+  vite: {
+    plugins: [
+      {
+        name: "custom-page-props",
+        transform: (code, id) => {
+          if (id.includes("@astrojs/starlight/components/Page.astro")) {
+            return code.replace(/<body/, '<body class="body-custom"');
+          }
+          return code;
+        },
+      },
+    ],
+  },
 });

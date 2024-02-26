@@ -1,17 +1,15 @@
-/* Dark mode colors. */
-/* Dark mode colors. */
 :root {
     --sl-color-accent-low: #002b24;
-    --sl-color-accent: #007b6b;
-    --sl-color-accent-high: #86dcca;
-    --sl-color-white: #ffffff;
-    --sl-color-gray-1: #f1e9ff;
-    --sl-color-gray-2: #c8bbde;
-    --sl-color-gray-3: #977cbf;
-    --sl-color-gray-4: #634987;
-    --sl-color-gray-5: #432863;
-    --sl-color-gray-6: #31154f;
-    --sl-color-black: #1d122b;
+    --sl-color-accent: #bdbdbd;
+    --sl-color-accent-high: #bdbdbd;
+    --sl-color-white: #c7a06f;
+    --sl-color-gray-1: #c17ac8;
+    --sl-color-gray-2: #bdbdbd;
+    --sl-color-gray-3: #6d6d6d;
+    --sl-color-gray-4: #c55858;
+    --sl-color-gray-5: #bdbdbd;
+    --sl-color-gray-6: #3a2c58;
+    --sl-color-black: #15141b;
 
 
     --ifm-color-primary: #a277ff;
@@ -24,6 +22,18 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
     --ifm-link-hover-color: #61ffca;
     --my-link-hover: #61ffca !important;
+}
+
+p a:link {
+    color: #54c59f !important;
+}
+
+p a:hover {
+    color: #6cb2c7 !important;
+}
+
+.starlight-aside {
+    color: #bdbdbd !important;
 }
 
 /* Light mode colors. */
@@ -188,55 +198,6 @@ article ul li::marker {
     display: block;
 }
 
-.fuggle {
-    color: black !important;
-    background-color: #61ffca;
-    padding: 5px 10px 5px 10px !important;
-}
-
-.myreact-label {
-    padding-top: 6px;
-    border: solid 2px var(--ifm-color-primary);
-}
-
-.myreact-toggle {
-    margin-bottom: -5px;
-}
-
-.myreact-span {
-    padding-left: 5px;
-    position: relative;
-    top: -1px;
-}
-
-.react-toggle-thumb {
-    margin: auto !important;
-    border: 12px solid red;
-}
-
-.react-toggle-track-check {
-    margin-top: 5px !important;
-}
-
-.react-toggle-track-x {
-    margin: auto !important;
-    margin-top: 4px !important;
-    margin-right: 3px !important
-}
-
-.react-toggle-track {
-    background-color: var(--ifm-color-primary);
-}
-
-.navbar-sidebar__item .myreact-label {
-    display: none !important;
-    margin: 12px !important;
-}
-
-.react-toggle--focus .react-toggle-thumb {
-    box-shadow: none !important;
-}
-
 .code-block-error-line {
     background-color: #ff000020;
     display: block;
@@ -247,13 +208,6 @@ article ul li::marker {
 
 .hidden {
     display: none;
-}
-
-#global-react-toggle {
-    margin-top: 5px;
-    padding-left: 3.5em;
-    width: auto;
-    float: right;
 }
 
 .header {
@@ -290,53 +244,21 @@ div.sl-flex.astro-kmkmnagf {
     width: 10%;
 }
 
-.main-pane .astro-67yu43on {}
-
-.content-panel .astro-7nkwcw3z {
-    max-width: auto;
-}
-
-div a span.astro-m46x6ez3 {
-    width: auto !important;
-    min-width: 290px !important;
-    font-size: 1em;
-}
-
-div a img.astro-m46x6ez3 {
-    max-width: 40px !important;
-    width: 2em !important;
-}
-
-@media only screen and (max-width: 767px) {
-
-    div.sl-flex.astro-kmkmnagf {
-        width: 60%;
+/* content page start*/
+@media (min-width: 2100px) {
+    .right-sidebar-container:where(.astro-67yu43on) {
+        order: 1;
+        width: 15%;
+        min-width: 15%;
     }
 
-    div a span.astro-m46x6ez3 {
-        display: none !important;
+    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
+        order: 2;
+        width: 85%;
     }
 }
 
-@media (min-width: 50rem) {
-    div a span.astro-m46x6ez3 {
-        font-size: 0.8em;
-    }
-}
-
-@media (min-width: 80rem) {
-    div a span.astro-m46x6ez3 {
-        font-size: 0.8em;
-    }
-}
-
-@media (min-width: 72rem) {
-
-    .sl-markdown-content {
-        padding-right: 0px;
-        padding-left: 25px;
-    }
-
+@media (min-width: 2000px) and (max-width: 2100px) {
     .right-sidebar-container:where(.astro-67yu43on) {
         order: 1;
         width: 15%;
@@ -349,17 +271,30 @@ div a img.astro-m46x6ez3 {
     }
 }
 
-@media (max-width: 1700px) {
+@media (min-width: 1600px) and (max-width: 2000px) {
+    .right-sidebar-container:where(.astro-67yu43on) {
+        order: 1;
+        width: 20%;
+        min-width: 20%;
+    }
 
-    .sl-markdown-content {
-        padding-right: 0px;
-        padding-left: 25px;
+    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
+        order: 2;
+        width: 80%;
+    }
+}
+
+@media (min-width:1000px) and (max-width: 1600px) {
+
+    .sl-flex .copy .astro-jbfsktt5 {
+        padding: 0px;
+        font-size: 0.8em;
     }
 
     .right-sidebar-container:where(.astro-67yu43on) {
         order: 1;
         width: 25%;
-        min-width: 20%;
+        min-width: 25%;
     }
 
     [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
@@ -368,82 +303,154 @@ div a img.astro-m46x6ez3 {
     }
 }
 
-@media (min-width: 1700px) {
-
-    .sl-markdown-content {
-        padding-right: 0px;
-        padding-left: 25px;
-    }
-
-    .right-sidebar-container:where(.astro-67yu43on) {
-        order: 1;
-        width: 5%;
-        min-width: 15%;
-    }
-
-    [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
-        order: 2;
-        width: 85%;
-    }
-}
-
 @media (max-width: 1148px) {
 
-    .sl-markdown-content {
-        padding-right: 0px;
-        padding-left: 25px;
-    }
-
-    .right-sidebar-container:where(.astro-67yu43on) {
-        order: 1;
-        width: 5%;
-        min-width: 15%;
+    .sl-flex .copy .astro-jbfsktt5 {
+        padding: 0px;
+        font-size: 0.7em;
     }
 
     [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
-        order: 2;
         width: 100%;
     }
 }
 
-site-search .astro-v37mnknz {
+/* content page end*/
+
+/* front page stuff start */
+
+.hero .astro-jbfsktt5 {
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+div.sl-markdown-content .card-grid.stagger.astro-zntqmydn {
     width: 100%;
-    max-width: none;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
-
-
-h1.astro-jbfsktt5 {
-    font-size: xx-large;
-}
-
 
 .astro-jbfsktt5 {
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    /* font-size: larger; */
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 1.2em;
 }
+
+/* main page  title and logo stuff start */
 
 img.astro-jbfsktt5 {
     padding: 0px;
-    padding-top: 40px;
-    padding-bottom: 0px;
-    width: 100%;
-    /* background-color: #86dcca; */
-}
-
-.sl-flex .copy .astro-jbfsktt5 {
-    padding: 0px;
-    /* background-color: #86dcca; */
 }
 
 .sl-flex .stack .astro-jbfsktt5 {
-    padding: 0px;
-    /* background-color: #86dcca; */
+    padding-left: 20%;
 }
 
+.sl-flex .actions .astro-jbfsktt5 {}
+
+.sl-flex .copy .astro-jbfsktt5 {
+    padding: 0px;
+}
+
+/* main page  title and logo stuff end */
+
+/* front page stuff end */
+
+/* make sure there is a gap when it is rendered on page */
 
 #Advanced-class {
     padding-top: 15px;
     margin: auto;
+}
+
+/* react toggle start*/
+
+.toggle-global {
+    margin: 20px 16px 16px 0px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.toggle-div {}
+
+.toggle-label {}
+
+.toggle-toggle {}
+
+.react-toggle-track-x {
+    margin: 0px 3px 0px 0px;
+    padding-bottom: 17px;
+}
+
+.react-toggle-track-check {
+    margin: 0px 0px 0px 0px;
+    padding-bottom: 16px;
+}
+
+
+.react-toggle-thumb {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 3px solid !important;
+    border-color: #54c59f !important;
+}
+
+.react-toggle .react-toggle-thumb {
+    background-color: #c7a06f !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+    background-color: #8464c6 !important;
+}
+
+/* .react-toggle .react-toggle-thumb {
+    background-color: red !important;
+} */
+
+.react-toggle--checked .react-toggle-track {
+    background-color: #aa4bb3 !important;
+    /* background-color: var(--sl-color-gray-4); */
+}
+
+.react-toggle-track {
+    min-width: 16px;
+    background-color: #6d6d6d !important;
+}
+
+/* react toggle end */
+
+.body-custom {
+    /* background-color: red; */
+}
+
+/* tabs stuff start */
+
+a[aria-selected="true"].astro-esqgolmp {
+    border-top: 1px solid #54c59f !important;
+    border-left: 1px solid #54c59f !important;
+    border-right: 1px solid #54c59f !important;
+    border-bottom: 1px solid #54c59f !important;
+}
+
+a[tabindex="-1"].astro-esqgolmp {
+    border-bottom: 1px solid #8464c6 !important;
+}
+
+:where(.astro-esqgolmp)[role=tablist] {
+    display: flex;
+    list-style: none;
+    border-bottom: 1px solid #54c59f !important;
+    padding: 0;
+}
+
+/* tabs stuff end */
+
+code {
+    color: #15141b;
 }

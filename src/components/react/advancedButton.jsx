@@ -21,32 +21,33 @@ function App() {
         setToggled(toggle);
     }, [toggle]);
 
+    const handleChange = (event) => {
+        setToggle((prev) => !prev);
+        for (let element of document.getElementsByClassName(
+            "Advanced-class"
+        )) {
+            {
+                toggle
+                    ? (element.style.display = "none")
+                    : (element.style.display = "block");
+            }
+        }
+    };
+
     return (
-        <div className="astro-kmkmnagf">
-            <label className="myreact-label advanced-button ">
+        <div className="toggle-div">
+            <label className="toggle-label">
                 <Toggle
-                    className="myreact-toggle"
+                    className="toggle-toggle"
                     checked={toggle}
                     icons={{
                         checked: <GiBrain />,
                         unchecked: <MdOutlineMenuBook />,
                     }}
-                    onChange={() => {
-                        setToggle((prev) => !prev);
-                        for (let element of document.getElementsByClassName(
-                            "Advanced-class"
-                        )) {
-                            {
-                                toggle
-                                    ? (element.style.display = "none")
-                                    : (element.style.display = "block");
-                            }
-                        }
-                    }}
+                    onChange={handleChange}
                 ></Toggle>
-                <span className="myreact-span astro-kmkmnagf">{toggle ? "" : ""}</span>
             </label>
-        </div>
+        </div >
     );
 }
 
