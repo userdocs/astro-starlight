@@ -18,6 +18,42 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
+<div class="float-container" >
+
+<div class="float-child fc-1">
+    <Card class="card-logos-1" title="Github">
+        <div class="card-logos-image card-logos-image-github">
+            <img src="/astro-starlight/logo-github.svg"  alt=""/>
+        </div>
+    </Card>
+</div>
+
+<div class="float-child fc-2">
+    <Card class="card-logos-2" title="musl libc">
+        <div class="card-logos-image card-logos-image-musl">
+            <img src="/astro-starlight/logo-musl.svg" alt=""/>
+        </div>
+    </Card>
+</div>
+
+<div class="float-child fc-3">
+    <Card class="card-logos-3" title="Alpine Linux">
+        <div class="card-logos-image card-logos-image-alpine">
+            <img src="/astro-starlight/logo-alpine.svg" alt=""/>
+        </div>
+    </Card>
+</div>
+
+<div class="float-child fc-4">
+    <Card class="card-logos-4" title="qBittorrent-nox">
+        <div class="card-logos-image card-logos-image-qbittorrent">
+            <img src="/astro-starlight/logo-qbittorrent.svg" alt=""/>
+        </div>
+    </Card>
+</div>
+
+</div>
+
 <CardGrid stagger>
 	<Card title="Cutting edge" icon="pencil">
        Using the most current dependencies and tools to build the latest version of qbittorrent-nox

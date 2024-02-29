@@ -25,7 +25,7 @@ export default defineConfig({
     }),
 
     starlight({
-      favicon: "/astro-starlight/favicon-blue.svg",
+      //   favicon: "./favicon.svg",
       head: [
         // // https://starlight.astro.build/reference/configuration/#head
         // {
@@ -42,7 +42,7 @@ export default defineConfig({
       components: {
         // Override the default `SocialIcons` component.
         Header: "./src/components/Header.astro",
-        Head: "./src/components/Head.astro",
+        // Head: "./src/components/Head.astro",
       },
       expressiveCode: {
         // Pass the theme to the `themes` option
@@ -102,6 +102,10 @@ export default defineConfig({
             {
               label: "Credits",
               link: "/credits",
+            },
+            {
+              label: "Test",
+              link: "/test",
             },
           ],
         },

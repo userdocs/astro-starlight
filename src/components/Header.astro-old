@@ -1,8 +1,0 @@
----
-import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/Header.astro';
-import App from "./react/advancedButton.jsx";
----
-
-<Default {...Astro.props} ><slot /></Default>
-<div id="global-react-toggle"><App client:only="react" /></div>
