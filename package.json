@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
+    "@astrojs/check": "^0.5.5",
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/react": "^3.0.10",
     "@astrojs/starlight": "^0.20.1",
@@ -21,7 +21,7 @@
     "@nanostores/react": "^0.7.2",
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
-    "astro": "^4.4.6",
+    "astro": "^4.4.4",
     "astro-auto-import": "^0.4.2",
     "astro-navbar": "^2.3.1",
     "nanostores": "^0.10.0",
