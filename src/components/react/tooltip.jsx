@@ -1,17 +1,25 @@
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { getCollection } from 'astro:content';
-
-const glossaryCollection = await getCollection('docs');
+import { useState, useEffect } from 'react';
 
 export default function MyToolTip({ children }) {
 
     const toolTipChildren = JSON.parse(JSON.stringify(children.props)).value.trim().split(":");
     const customCssID = toolTipChildren[1];
     const glossaryUrl = "glossary/" + toolTipChildren[1];
-    const result = glossaryCollection.filter(glossaryCollection => glossaryCollection.slug == "glossary/" + toolTipChildren[1])
-    const toolTipBody = JSON.parse(JSON.stringify(result))[0].body;
-    const toolTipSections = toolTipBody.split("---");
+
+    const [GlossaryBody, setGlossaryBody] = useState(null);
+
+    useEffect(() => {
+        fetch("/src/content/docs/glossary/" + toolTipChildren[1] + ".md")
+            .then((response) => response.text())
+            .then((data) => {
+                setGlossaryBody(data);
+            })
+            .catch((error) => console.log(error));
+    }, []);
+
+    const toolTipBody = String(GlossaryBody).split("---");
 
     return (
         <>
@@ -24,7 +32,7 @@ export default function MyToolTip({ children }) {
                 href={glossaryUrl}
                 target="_blank"
                 className="my_tooltip_url"
-                data-tooltip-html={"<span>" + toolTipSections[0] + "</span>"}
+                data-tooltip-html={"<span>" + toolTipBody[2] + "</span>"}
             >
                 {toolTipChildren[0]}
             </a>
