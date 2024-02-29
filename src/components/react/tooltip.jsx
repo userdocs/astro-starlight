@@ -11,7 +11,7 @@ export default function MyToolTip({ children }) {
     const [GlossaryBody, setGlossaryBody] = useState(null);
 
     useEffect(() => {
-        fetch("/astro-starlight/glossary/" + toolTipChildren[1] + ".md")
+        fetch("/astro-starlight/glossary/" + toolTipChildren[1])
             .then((response) => response.text())
             .then((data) => {
                 setGlossaryBody(data);
