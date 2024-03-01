@@ -28,7 +28,8 @@ export default function MyToolTip({ children }) {
                 data-tooltip-position-strategy="absolute"
                 data-tooltip-id={customCssID + "_tooltip"}
                 data-tooltip-wrapper="span"
-                data-tooltip-place="top"
+                data-tooltip-place="bottom-start"
+                data-tooltip-offset="30"
                 href={glossaryUrl}
                 target="_blank"
                 className="my_tooltip_url"
