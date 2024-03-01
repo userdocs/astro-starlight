@@ -417,6 +417,7 @@ code {
 .sl-flex.action.primary.astro-yjy4zhro {
     border: 2px solid #c17ac8;
     border-radius: 3px;
+    padding: 2px 2px 4px 10px;
 }
 
 .sl-flex.action.secondary.astro-yjy4zhro {
@@ -424,6 +425,7 @@ code {
     border-radius: 3px;
     color: var(--sl-color-black) !important;
     background-color: var(--sl-button-color-secondary);
+    padding: 2px 2px 4px 10px;
 }
 
 .fc-1,
@@ -567,7 +569,7 @@ code {
 @media (min-width:1000px) and (max-width: 1600px) {
 
     .sl-flex.actions.astro-jbfsktt5 a {
-        min-width: 60%;
+        min-width: 44%;
     }
 
     .sl-flex.action.primary.astro-yjy4zhro {
@@ -600,6 +602,21 @@ code {
     }
 }
 
+@media (min-width:1000px) and (max-width: 1520px) {
+
+    .sl-flex.actions.astro-jbfsktt5 a {
+        min-width: 44%;
+    }
+
+    .sl-flex.action.primary.astro-yjy4zhro {
+        font-size: 0.4em !important;
+    }
+
+    .sl-flex.action.secondary.astro-yjy4zhro {
+        font-size: 0.4em !important;
+    }
+}
+
 @media (min-width:800px) and (max-width: 999px) {
 
     .sl-flex.actions.astro-jbfsktt5 a {
@@ -626,6 +643,21 @@ code {
 
     [data-has-sidebar][data-has-toc] .main-pane:where(.astro-67yu43on) {
         width: 100%;
+    }
+}
+
+@media (min-width:1000px) and (max-width: 1410px) {
+
+    .sl-flex.actions.astro-jbfsktt5 a {
+        min-width: 43%;
+    }
+
+    .sl-flex.action.primary.astro-yjy4zhro {
+        font-size: 0.35em !important;
+    }
+
+    .sl-flex.action.secondary.astro-yjy4zhro {
+        font-size: 0.35em !important;
     }
 }
 
