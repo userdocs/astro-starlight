@@ -539,3 +539,7 @@ code {
     }
 
 }
+
+.hero:where(.astro-jbfsktt5) {
+    padding-block: 0px;
+}
