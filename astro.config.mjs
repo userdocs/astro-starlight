@@ -49,6 +49,9 @@ export default defineConfig({
         // (consider adding a dark and light theme for accessibility)
         themes: [myTheme],
         tabWidth: 0,
+        defaultProps: {
+          frame: "none",
+        },
       },
 
       social: {
