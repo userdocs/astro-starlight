@@ -697,9 +697,12 @@ code {
 
 @media (min-width:1px) and (max-width: 499px) {
 
+    .sl-flex.copy.astro-jbfsktt5 {
+        font-size: 0.9em;
+    }
+
     .float-child {
-        padding-top: 100px;
-        font-size: 0.1em !important;
+        padding: 0px;
     }
 
     .float-container {
