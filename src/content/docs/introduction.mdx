@@ -4,6 +4,7 @@ description: Introduction
 ---
 
 import Advanced from "/src/components/react/advancedMarkdown.jsx";
+import Tips from "/src/components/react/tooltip.jsx"
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ### What is it?
@@ -25,12 +26,12 @@ It handles a lot of the nuanced complexity around building various different dep
 `s390x` - `riscv64`
 
 <Advanced client:only>
-This is done using [Debian crossbuild essentials](glossary/crossbuild-essentials) or [Musl Cross make toolchains](glossary/musl-cross-make), depending on the host build platform.
+This is done using <Tips client:only="react">Debian crossbuild essentials:crossbuild-essentials</Tips> or <Tips client:only="react">Musl Cross make toolchains:musl-cross-make</Tips>, depending on the host build platform.
 
-Taking advantage of [Github Workflows](glossary/github-workflows) it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
+Taking advantage of <Tips client:only="react">Github Workflows:github-workflows</Tips> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
 </Advanced>
 
-:::tip The hard part is done.
+:::tip[The hard part is done.]
 You always have a easy method available to you to build your own releases, simply by forking the repo and using the available workflows. How to do this will be shown in the [Github Actions](github-actions) sections later on. You can build locally or fork the repo and build and release using CI where the git repo acts as a local environment to the script.
 :::
 
@@ -105,7 +106,7 @@ The script can be downloaded locally and run on a supported host or via docker. 
 The best thing to do is read the script installation and usage sections to understand the key features and how to user them.
 :::
 
-<Advanced>
+<Advanced client:only>
 
 :::caution
 Certain build combinations require `qemu` and `binfmts` on the host to complete successfully.
