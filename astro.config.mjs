@@ -49,6 +49,13 @@ export default defineConfig({
         // (consider adding a dark and light theme for accessibility)
         themes: [myTheme],
         tabWidth: 0,
+        styleOverrides: {
+          // You can also override styles
+          borderRadius: "0.1rem",
+          frames: {
+            shadowColor: "none",
+          },
+        },
         defaultProps: {
           frame: "none",
         },
