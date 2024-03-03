@@ -4,6 +4,8 @@ hide_title: true
 ---
 
 import Advanced from "/src/components/react/advancedMarkdown.jsx";
+import Tips from "/src/components/react/tooltip.jsx"
+import Details from "/src/components/react/details.jsx";
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ## First run expectations
@@ -33,10 +35,7 @@ Using the flag `-c` or the env `qbt_build_tool=cmake` will trigger these additio
 :::
 </Advanced>
 
-<details className="custom-details">
-  <summary className="custom-sumamry">What to expect</summary>
-  ![](/src/static/docs_images/script_usage/1.png)
-</details>
+<Details client:only> ![](/public/docs_images/script_usage/1.png) </Details>
 
 When you are familiar with the script you can do anything you want with a one liner. It's pretty simple to use.
 
