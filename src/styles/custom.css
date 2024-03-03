@@ -235,10 +235,28 @@ a[tabindex="-1"] {
 }
 
 
+/* details summary stuff */
 
+.custom-details {
+    background-color: #2A2A2C;
+    margin: 0px;
+    padding: 0px;
 
+    border-left: 2px solid #543768;
+    border-bottom: 2px solid #543768;
+}
 
+.custom-summary {
+    background-color: #2A2A2C;
+    padding: 10px 0px 0px 15px;
+    margin-bottom: 10px;
+}
 
+.custom-content {
+    /* padding-top: 10px; */
+    padding: 10px;
+    border-top: 2px solid #543768;
+}
 
 
 
