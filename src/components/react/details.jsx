@@ -1,17 +1,16 @@
 
-export function Details({ children }) {
-
-    console.log(children);
+export function Details({ summary, children }) {
 
     return (
         <>
-            <hr />
-            <details className="custom-details">
-                <summary className="custom-summary">What to expect</summary>
-                <div className="custom-content">
-                    {children}
-                </div>
-            </details>
+            <div className="custom-details-container">
+                <details className="custom-details">
+                    <summary className="custom-summary">{summary}</summary>
+                    <div className="custom-content">
+                        {children}
+                    </div>
+                </details>
+            </div>
         </>
     );
 }

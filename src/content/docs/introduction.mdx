@@ -3,6 +3,7 @@ title: Introduction
 description: Introduction
 ---
 
+import Details from "/src/components/react/details.jsx";
 import Advanced from "/src/components/react/advancedMarkdown.jsx";
 import Tips from "/src/components/react/tooltip.jsx"
 import { Tabs, TabItem } from '@astrojs/starlight/components';
@@ -25,7 +26,7 @@ It handles a lot of the nuanced complexity around building various different dep
 
 `s390x` - `riscv64`
 
-<Advanced client:only>
+<Advanced client:only="react">
 This is done using <Tips client:only="react">Debian crossbuild essentials:crossbuild-essentials</Tips> or <Tips client:only="react">Musl Cross make toolchains:musl-cross-make</Tips>, depending on the host build platform.
 
 Taking advantage of <Tips client:only="react">Github Workflows:github-workflows</Tips> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
