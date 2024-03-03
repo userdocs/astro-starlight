@@ -1,5 +1,5 @@
 
-export default function Details({ children }) {
+export function Details({ children }) {
 
     console.log(children);
 
@@ -15,3 +15,5 @@ export default function Details({ children }) {
         </>
     );
 }
+
+export default Details

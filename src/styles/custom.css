@@ -16,6 +16,9 @@
     --sl-button-bg-primary: #347c64;
     --sl-button-bg-secondary: #553f64;
     --react-toggle-checked: #aa4bb3;
+
+    --details-1: #2A2A2C;
+    --details-2: #543768;
 }
 
 :root[data-theme='light'] {
@@ -36,6 +39,9 @@
     --sl-button-bg-primary: #c1dad1;
     --sl-button-bg-secondary: #beadc9;
     --react-toggle-checked: #aa4bb3;
+
+    --details-1: #daabdb;
+    --details-2: #4c0879;
 }
 
 /* Theme adjustments */
@@ -238,16 +244,16 @@ a[tabindex="-1"] {
 /* details summary stuff */
 
 .custom-details {
-    background-color: #2A2A2C;
+    background-color: var(--details-1);
     margin: 0px;
     padding: 0px;
 
-    border-left: 2px solid #543768;
-    border-bottom: 2px solid #543768;
+    border-left: 2px solid var(--details-2);
+    border-bottom: 2px solid var(--details-2);
 }
 
 .custom-summary {
-    background-color: #2A2A2C;
+    background-color: var(--details-1);
     padding: 10px 0px 0px 15px;
     margin-bottom: 10px;
 }
@@ -255,7 +261,7 @@ a[tabindex="-1"] {
 .custom-content {
     /* padding-top: 10px; */
     padding: 10px;
-    border-top: 2px solid #543768;
+    border-top: 2px solid var(--details-2);
 }
 
 
