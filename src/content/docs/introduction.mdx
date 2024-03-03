@@ -25,16 +25,6 @@ It handles a lot of the nuanced complexity around building various different dep
 
 `s390x` - `riscv64`
 
-<Advanced client:only="react">
-This is done using <Tips client:only="react">Debian crossbuild essentials:crossbuild-essentials</Tips> or <Tips client:only="react">Musl Cross make toolchains:musl-cross-make</Tips>, depending on the host build platform.
-
-Taking advantage of <Tips client:only="react">Github Workflows:github-workflows</Tips> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
-</Advanced>
-
-:::tip[The hard part is done.]
-You always have a easy method available to you to build your own releases, simply by forking the repo and using the available workflows. How to do this will be shown in the [Github Actions](github-actions) sections later on. You can build locally or fork the repo and build and release using CI where the git repo acts as a local environment to the script.
-:::
-
 Simply put, on supported host build platforms the `qbittorrent-nox-static.sh` will perform these three main tasks:
 
 <Steps>
@@ -48,6 +38,16 @@ Simply put, on supported host build platforms the `qbittorrent-nox-static.sh` wi
 </Steps>
 
 The script is highly configurable and is capable of native and cross building. These more advanced configurations will be discussed the next sections.
+
+<Advanced client:only="react">
+This is done using <Tips client:only>Debian crossbuild essentials:crossbuild-essentials</Tips> or <Tips client:only>Musl Cross make toolchains:musl-cross-make</Tips>, depending on the host build platform.
+
+Taking advantage of <Tips client:only>Github Workflows:github-workflows</Tips> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
+</Advanced>
+
+:::tip[The hard part is done.]
+You always have a easy method available to you to build your own releases, simply by forking the repo and using the available workflows. How to do this will be shown in the [Github Actions](github-actions) sections later on. You can build locally or fork the repo and build and release using CI where the git repo acts as a local environment to the script.
+:::
 
 ### What is the outcome
 

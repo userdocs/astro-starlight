@@ -47,7 +47,7 @@ export default defineConfig({
       expressiveCode: {
         // Pass the theme to the `themes` option
         // (consider adding a dark and light theme for accessibility)
-        themes: [myTheme],
+        themes: [myTheme, "github-light"],
         tabWidth: 0,
         styleOverrides: {
           // You can also override styles

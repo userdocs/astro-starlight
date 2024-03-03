@@ -44,25 +44,25 @@ export default function MyToolTip({ children }) {
     return (
         <>
             <a
-                id={customCssID + "_tooltip"}
+                id={customCssID + "-tooltip"}
                 data-tooltip-position-strategy="absolute"
-                data-tooltip-id={customCssID + "_tooltip"}
+                data-tooltip-id={customCssID + "-tooltip"}
                 data-tooltip-wrapper="span"
                 data-tooltip-place="bottom-start"
                 data-tooltip-offset="30"
                 href={glossaryUrl}
                 target="_blank"
-                className="my_tooltip_url"
+                className="my-tooltip-url"
             >
                 {toolTipChildren[0]}
             </a>
             <Tooltip
-                className="my_tooltip"
+                className="my-tooltip"
                 noArrow="true"
-                id={customCssID + "_tooltip"}
+                id={customCssID + "-tooltip"}
                 float="true"
                 clickable="true"
-                anchorSelect={"#" + customCssID + "_tooltip"}
+                anchorSelect={"#" + customCssID + "-tooltip"}
                 wrapper="span"
             ><Markdown>{GlossaryBody}</Markdown></Tooltip>
         </>
