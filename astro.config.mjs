@@ -78,6 +78,10 @@ export default defineConfig({
               link: "/introduction",
             },
             {
+              label: "Prerequisites Check List",
+              link: "/prerequisites",
+            },
+            {
               label: "Script Installation",
               link: "/script-installation",
             },
@@ -94,8 +98,8 @@ export default defineConfig({
               link: "/patching",
             },
             {
-              label: "Github actions",
-              link: "/github-actions",
+              label: "Debugging",
+              link: "/debugging",
             },
             {
               label: "Install qbittorrent",
@@ -110,12 +114,16 @@ export default defineConfig({
               link: "/systemd",
             },
             {
+              label: "Github actions",
+              link: "/github-actions",
+            },
+            {
               label: "Credits",
               link: "/credits",
             },
             {
-              label: "Test",
-              link: "/test",
+              label: "Change Log",
+              link: "/changelog",
             },
           ],
         },

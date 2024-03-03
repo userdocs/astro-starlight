@@ -3,7 +3,9 @@ title: BuildJet for Github Actions
 hide_title: true
 ---
 
-A paid for alternative to self hosted runners that allow for native arm runners as well as increased cores for faster build times.
+🔵 A paid for alternative to self hosted runners that allow for native arm runners as well as increased cores for faster build times.
+
+🟢 Follow link for full Glossary entry
 
 ---
 

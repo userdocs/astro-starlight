@@ -3,7 +3,9 @@ title: Musl Cross Make
 hide_title: true
 ---
 
-Custom musl crossbuild toolchains based on musl.cc
+🔵 Custom musl crossbuild toolchains based on musl.cc
+
+🟢 Follow link for full Glossary entry
 
 ---
 

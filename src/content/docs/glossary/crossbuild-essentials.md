@@ -3,9 +3,9 @@ title: Debian Crossbuild-Essentials
 hide_title: true
 ---
 
-Native Debian and Ubuntu cross build toolchains for cross compiling, used when a supported Debian based OS is the Host.
+🔵 Native Debian and Ubuntu cross build toolchains for cross compiling, used when a supported Debian based OS is the Host.
 
-Follow link for full Glossary entry
+🟢 Follow link for full Glossary entry
 
 ---
 

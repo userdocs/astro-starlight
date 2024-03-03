@@ -3,28 +3,54 @@ title: Script Installation
 description: Script Installation
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Advanced, Details, Tips } from "/src/components/react/global.jsx";
+import { Steps, Code, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
 ## Pre installation
 
+:::note
+
+The rules of engagement are:
+
+<Steps>
+
+1. `root` / `sudo` - This script is designed to be run as a root user and not as a local user.
+
+2. Executing the script will install the necessary dependencies and configure the build environment.
+
+3. Nothing is built until you provide the `all` or a specific module name as a positional parameter to the script.
+
+</Steps>
+:::
+
+
+:::danger
+Though this script can run on the host system, it is recommended to use a docker container to avoid conflicts with the host system
+
+Qt is especially problematic and tries to use unwanted system dependencies and can cause build failures.
+
+So please, just use the docker method. There are no performance penalties and it is safer.
+:::
+
 :::caution
-Executing just the script will only configure your build environment and may require a reboot to make sure you can successfully build `qbittorrent-nox`
+This build script only supports modern versions of the following distributions:
 
-The build process will not start until `all` or a specific module name is provided to the script as a positional parameter.
+`Alpine`, `Debian`, `Ubuntu`
+
+You do not need to build on an older host to use these binaries there.
 :::
 
-:::tip
-The preferred and recommended build platform is Alpine Linux and the recommended method is via docker.
-:::
+## Host - Install commands
 
-## Using SSH
-
-As a local user
+<Tabs>
+<TabItem value="Debian" label="Debian">
 
 ```bash
 wget -qO ~/qbittorrent-nox-static.sh https://git.io/qbstatic
 ```
 
+</TabItem>
+<TabItem value="Alpine" label="Alpine">
 For Alpine specifically, you need to install bash to use this script.
 
 ```bash
@@ -34,29 +60,96 @@ apk add bash
 To execute the script use this command:
 
 ```bash
-bash ~/qbittorrent-nox-static.sh
+wget -qO ~/qbittorrent-nox-static.sh https://git.io/qbstatic
 ```
+</TabItem>
+</Tabs>
+
+## Docker - Install commands
+
+<Tabs>
+<TabItem value="Notes" label="Notes">
+
+Some notes on the dockers method:
+
+- We use a subdirectory, not your `$HOME` directory, to avoid `.bashrc` and `.profile` conflicts.
+- A subdirectory is automatically created, named `qbt` by the use of `-v $HOME/qbt:/root`
+- The default path will be `HOME/qbt` outside the docker container and `/root/qbt` inside it.
+- We use `-e "LANG=en_GB.UTF-8"` with Debian based images to avoid some errors.
+
+</TabItem>
+<TabItem value="Debian Linux" label="Debian">
+
+:::note[tags]
+You use `debian:latest` or a supported tag
+:::
+
+To bootstrap the container:
+
+```bash
+docker run -it -w /root -e "LANG=en_GB.UTF-8" -v ~/qbt:/root debian:latest /bin/bash -c 'apt update && apt install -y curl && curl -sL git.io/qbstatic && bash'
+```
+
+</TabItem>
+<TabItem value="Ubuntu Linux" label="Ubuntu">
+
+:::note tags
+You use `ubuntu:focal` `ubuntu:jammy` `ubuntu:latest`
+:::
+
+To bootstrap the container:
+
+```bash
+docker run -it -w /root -e "LANG=en_GB.UTF-8" -v $HOME/qbt:/root ubuntu:latest /bin/bash -c 'apt update && apt install -y curl && bash'
+```
+
+All in one command:
+
+```bash
+docker run -it -w /root -e "LANG=en_GB.UTF-8" -v $HOME/qbt:/root ubuntu:latest /bin/bash -c 'apt update && apt install -y curl && curl -sL git.io/qbstatic | bash -s all'
+```
+
+</TabItem>
+<TabItem value="Alpine Linux" label="Alpine">
+
+:::note tags
+You use `alpine:edge` `alpine:latest`
+:::
+
+To bootstrap the container:
+
+```bash
+docker run -it -w /root -v $HOME/qbt:/root alpine:edge /bin/ash -c 'apk update && apk add bash curl && bash'
+```
+
+All in one command:
+
+```bash
+docker run -it -w /root -v $HOME/qbt:/root alpine:edge /bin/ash -c 'apk update && apk add bash curl && curl -sL git.io/qbstatic | bash -s all'
+```
+</TabItem>
+</Tabs>
+
+## Post installation
 
 If you need to install the dependencies and you have `sudo` privileges then do this:
 
 :::caution
-You only need to do this once as root to install the dependencies.
+This only needs to be done once, as root, to install the dependencies. Using certain enviroment variables or switches can add dependencies, like `-c` for cmake.
+
+You may need to escalate your privileges again.
 :::
 
 ```bash
 sudo bash ~/qbittorrent-nox-static.sh
 ```
 
-:::tip
-Using certain switches can add dependencies like `-c` for cmake. So you may need to escalate your privileges again.
-:::
-
 ## Docker via SSH
 
 Some notes on the dockers method:
 
-- We will use a subdirectory and not your `$HOME` directory as to avoid `.bashrc` and `.profile` conflicts.
-- The subdirectory will be automatically created and named `qbt` by the use of `-v $HOME/qbt:/root`
+- We use a subdirectory, not your `$HOME` directory, to avoid `.bashrc` and `.profile` conflicts.
+- A subdirectory is automatically created, named `qbt` by the use of `-v $HOME/qbt:/root`
 - The finale default path will be `HOME/qbt` outside the docker container and `/root/qbt` inside it.
 
 :::tip

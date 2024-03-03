@@ -9,7 +9,6 @@ export default function MyToolTip({ children }) {
     const glossaryUrl = "/astro-starlight/glossary/" + toolTipChildren[1];
     const [GlossaryBody, setGlossaryBody] = useState(null);
 
-
     const localUrl = "/src/content/docs/glossary/" + toolTipChildren[1] + ".md";
     const remoteUrl = "https://raw.githubusercontent.com/userdocs/astro-starlight/main/src/content/docs/glossary/" + toolTipChildren[1] + ".md";
 
