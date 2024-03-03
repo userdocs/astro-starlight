@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Markdown from 'react-markdown'
 
 export default function MyToolTip({ children }) {
-    const toolTipChildren = JSON.parse(JSON.stringify(children.props)).value.trim().split(":");
+    const toolTipChildren = children.props.value.trim().split(":");
     const customCssID = toolTipChildren[1];
     const glossaryUrl = "/astro-starlight/glossary/" + toolTipChildren[1];
     const [GlossaryBody, setGlossaryBody] = useState(null);
