@@ -3,10 +3,7 @@ title: test
 hide_title: true
 ---
 
-import Advanced from "/src/components/react/advancedMarkdown.jsx";
-import Tips from "/src/components/react/tooltip.jsx"
-import Details from "/src/components/react/details.jsx";
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Advanced, Details, Tips } from "/src/components/react/global.jsx";
 
 <Tips client:only="react">buildjet:buildjet</Tips>
 
@@ -27,3 +24,12 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 <Tips client:only="react">a toolip with custom id:id</Tips>
 
 <Tips client:only="react">qemu wemu:qemu</Tips>
+
+<Details summary="Toggle me! 1" client:only="react">
+This is the detailed content
+    <Details summary="Nested toggle! Some surprise inside..." client:only="react">
+      😲😲😲😲😲
+    </Details>
+</Details>
+
+<Details summary="Toggle me! 2" client:only="react">yolo</Details>

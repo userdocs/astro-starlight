@@ -3,9 +3,7 @@ title: Introduction
 description: Introduction
 ---
 
-import Details from "/src/components/react/details.jsx";
-import Advanced from "/src/components/react/advancedMarkdown.jsx";
-import Tips from "/src/components/react/tooltip.jsx"
+import { Advanced, Details, Tips } from "/src/components/react/global.jsx";
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ### What is it?
@@ -61,7 +59,7 @@ zlib: 1.2.13.zlib-ng
 ```
 
 <Tabs>
-<TabItem label=" 🔹 Debian and Ubuntu Linux">
+<TabItem label="Debian and Ubuntu Linux">
 
 The script creates a fully static `qbittorrent-nox` binary using [libc](https://www.gnu.org/software/libc/)
 
@@ -78,7 +76,7 @@ not a dynamic executable
 ```
 
 </TabItem>
-<TabItem label="🔹Alpine Linux">
+<TabItem label="Alpine Linux">
 
 The script creates a fully static `qbittorrent-nox` binary using [musl](https://wiki.musl-libc.org/)
 
