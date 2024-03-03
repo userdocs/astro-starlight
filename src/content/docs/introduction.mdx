@@ -5,6 +5,7 @@ description: Introduction
 
 import { Advanced, Details, Tips } from "/src/components/react/global.jsx";
 import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
 
 ### What is it?
 
@@ -36,11 +37,15 @@ You always have a easy method available to you to build your own releases, simpl
 
 Simply put, on supported host build platforms the `qbittorrent-nox-static.sh` will perform these three main tasks:
 
-- Update the system and install the core build dependencies based on activated options - Requires root privileges if any dependencies are missing.
+<Steps>
 
-- Download and build the `qbittorrent-nox` and all dependencies locally with no special privileges required.
+1. Update the system and install the core build dependencies based on activated options - Requires root privileges if any dependencies are missing.
 
-- Build a fully static and portable `qbittorrent-nox` binary which automatically uses the latest version of all supported dependencies.
+2. Download and build the `qbittorrent-nox` and all dependencies locally with no special privileges required.
+
+3. Build a fully static and portable `qbittorrent-nox` binary which automatically uses the latest version of all supported dependencies.
+
+</Steps>
 
 The script is highly configurable and is capable of native and cross building. These more advanced configurations will be discussed the next sections.
 

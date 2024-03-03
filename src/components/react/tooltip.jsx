@@ -9,13 +9,36 @@ export default function MyToolTip({ children }) {
     const glossaryUrl = "/astro-starlight/glossary/" + toolTipChildren[1];
     const [GlossaryBody, setGlossaryBody] = useState(null);
 
+
+    const localUrl = "/src/content/docs/glossary/" + toolTipChildren[1] + ".md";
+    const remoteUrl = "https://raw.githubusercontent.com/userdocs/astro-starlight/main/src/content/docs/glossary/" + toolTipChildren[1] + ".md";
+
     useEffect(() => {
-        fetch("https://raw.githubusercontent.com/userdocs/astro-starlight/main/src/content/docs/glossary/" + toolTipChildren[1] + ".md")
-            .then((response) => response.text())
-            .then((data) => {
+        fetch(localUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Local fetch failed');
+                }
+                return response;
+            })
+            .catch(error => {
+                console.log(error);
+                console.log('Local fetch failed, trying remote URL...');
+                return fetch(remoteUrl);
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Remote fetch also failed');
+                }
+                return response.text(); // or response.text() if the response is text
+            })
+            .then(data => {
+                // Use the data
                 setGlossaryBody(String(data).split("---")[2]);
             })
-            .catch((error) => console.log(error));
+            .catch(error => {
+                console.error('Both fetches failed', error);
+            });
     }, []);
 
     return (
