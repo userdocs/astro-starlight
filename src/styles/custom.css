@@ -450,7 +450,6 @@ details[open] div.custom-content {
 }
 
 .toolTipDialog {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
