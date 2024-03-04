@@ -3,7 +3,8 @@ title: Build Help
 description: Build Help
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Advanced, Details, Tips } from "/src/components/global.jsx";
+import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
 Once the script has successfully configured the platform you can execute the help switch to see how it works and what options you have available to you.
 
@@ -46,17 +47,21 @@ If you set `qbt_build_tool=cmake` and `qt_version=6.2` with the switch `-qm` you
 All switches and flags have a supporting help option that will provide dynamic content where applicable.
 
 :::note
- The `--boot-strap-release` and `--boot-strap-multi-arch` options are specific to GitHub actions but if you read `--help-boot-strap-release` you can see how to trigger `aarch64|armv7` builds on your local system using Alpine/Debian/Ubuntu via docker.
+The `--boot-strap-release` and `--boot-strap-multi-arch` options are specific to GitHub actions but if you read `--help-boot-strap-release` you can see how to trigger `aarch64|armv7` builds on your local system using Alpine/Debian/Ubuntu via docker.
 :::
 
+<details class="custom-details">
+<summary class="custom-summary">Script Help Options</summary>
+<div class="custom-content">
 ```bash
  Here are a list of available options
 
  Use: -b     or --build-directory       Help: -h-b     or --help-build-directory
- Use: -bv    or --boost-version         Help: -h-bv    or --help-boost-version
+ Use: -bt    or --boost-version         Help: -h-bt    or --help-boost-version
  Use: -c     or --cmake                 Help: -h-c     or --help-cmake
+ Use: -cd    or --cache-directory       Help: -h-cd    or --help-cache-directory
  Use: -d     or --debug                 Help: -h-d     or --help-debug
- Use: -bs    or --boot-strap            Help: -h-bs    or --help-boot-strap
+ Use: -bs-p  or --boot-strap-patches    Help: -h-bs-p  or --help-boot-strap-patches
  Use: -bs-c  or --boot-strap-cmake      Help: -h-bs-c  or --help-boot-strap-cmake
  Use: -bs-r  or --boot-strap-release    Help: -h-bs-r  or --help-boot-strap-release
  Use: -bs-ma or --boot-strap-multi-arch Help: -h-bs-ma or --help-boot-strap-multi-arch
@@ -72,7 +77,11 @@ All switches and flags have a supporting help option that will provide dynamic c
  Use: -pr    or --patch-repo            Help: -h-pr    or --help-patch-repo
  Use: -qm    or --qbittorrent-master    Help: -h-qm    or --help-qbittorrent-master
  Use: -qt    or --qbittorrent-tag       Help: -h-qt    or --help-qbittorrent-tag
+ Use: -qtt   or --qt-tag                Help: -h-qtt   or --help-qtt-tag
+ Use: -sdu   or --script-debug-urls     Help: -h-sdu   or --help-script-debug-urls
+ Use: -si    or --static-ish            Help: -h-s     or --help-strip
  Use: -s     or --strip                 Help: -h-s     or --help-strip
+ Use: -wf    or --workflow              Help: -h-wf    or --help-workflow
 
  Module specific help - flags are used with the modules listed here.
 
@@ -80,48 +89,65 @@ All switches and flags have a supporting help option that will provide dynamic c
 
  all ---------------- optional Recommended method to install all modules
  install ------------ optional Install the ~/qbt-build/completed/qbittorrent-nox binary
- bison -------------- required Build bison
- gawk --------------- required Build gawk
- glibc -------------- required Build libc locally to statically link nss
  zlib --------------- required Build zlib locally
  iconv -------------- required Build iconv locally
  icu ---------------- optional Build ICU locally
  openssl ------------ required Build openssl locally
  boost -------------- required Download, extract and build the boost library files
  libtorrent --------- required Build libtorrent locally
- double_conversion -- required A cmakke + Qt6 build compenent on modern OS only.
+ double_conversion -- required A cmake + Qt6 build component on modern OS only.
  qtbase ------------- required Build qtbase locally
  qttools ------------ required Build qttools locally
  qbittorrent -------- required Build qbittorrent locally
 
  env help - supported exportable evironment variables
 
- export qbt_libtorrent_version="" - options 1.2 2.0
- export qbt_qt_version="" --------- options 5,5.15,6,6.2,6.3 and so on
- export qbt_build_tool="" --------- options qmake cmake
- export qbt_cross_name="" --------- options aarch64 armv7 armhf
- export qbt_patches_url="" -------- options userdocs/qbittorrent-nox-static or usee your full/shorthand github repo
- export qbt_workflow_files="" ----- options yes no - use qbt-workflow-files repo for dependencies - custom tags will override
- export qbt_optimise_strip="" ----- options yes no - strip binaries to reduce file size - cannot be used with debug
- export qbt_build_debug="" -------- options yes no - create a full debug build for use with gdb - cannot be used with strip
+ export qbt_libtorrent_version="" -------- options 1.2 - 2.0
+ export qbt_qt_version="" ---------------- options 5 - 5.15 - 6 - 6.2 - 6.3 and so on
+ export qbt_build_tool="" ---------------- options qmake - cmake
+ export qbt_cross_name="" ---------------- options x86_64 - aarch64 - armv7 - armhf
+ export qbt_patches_url="" --------------- options userdocs/qbittorrent-nox-static.
+ export qbt_libtorrent_tag="" ------------ options Takes a valid git tag or branch for libtorrent
+ export qbt_qbittorrent_tag="" ----------- options Takes a valid git tag or branch for qbittorrent
+ export qbt_boost_tag="" ----------------- options Takes a valid git tag or branch for boost
+ export qbt_qt_tag="" -------------------- options Takes a valid git tag or branch for Qt
+ export qbt_workflow_files="" ------------ options yes no - use qbt-workflow-files for dependencies
+ export qbt_workflow_artifacts="" -------- options yes no - use qbt_workflow_artifacts for dependencies
+ export qbt_cache_dir="" ----------------- options path empty - provide a path to a cache directory
+ export qbt_libtorrent_master_jamfile="" - options yes no - use RC branch instead of release jamfile
+ export qbt_optimise_strip="" ------------ options yes no - strip binaries - cannot be used with debug
+ export qbt_build_debug="" --------------- options yes no - debug build - cannot be used with strip
+ export qbt_standard="" ------------------ options 14 - 17 - 20 - 23 - c standard for gcc - for older build combos
+ export qbt_static_ish="" ---------------- options yes no - libc linking - link dynamically to libc
 
- Currrent settings
+ ⬤ Default env settings
 
- qbt_libtorrent_version="2.0"
- qbt_qt_version="5"
- qbt_build_tool="qmake"
- qbt_cross_name=""
- qbt_patches_url="userdocs/qbittorrent-nox-static"
- qbt_workflow_files="no"
- qbt_libtorrent_master_jamfile="no"
- qbt_optimise_strip="no"
- qbt_build_debug="no"
+   qbt_libtorrent_version="2.0"
+   qbt_qt_version="6"
+   qbt_build_tool="cmake"
+   qbt_cross_name="x86_64"
+   qbt_patches_url="userdocs/qbittorrent-nox-static"
+   qbt_skip_icu="yes"
+   qbt_boost_tag="boost-1.84.0"
+   qbt_libtorrent_tag="v2.0.10"
+   qbt_qt_tag="v6.6.2"
+   qbt_qbittorrent_tag="release-4.6.3"
+   qbt_libtorrent_master_jamfile="no"
+   qbt_workflow_files="no"
+   qbt_workflow_artifacts="no"
+   qbt_cache_dir=""
+   qbt_optimise_strip="yes"
+   qbt_build_debug="no"
+   qbt_standard="17"
+   qbt_static_ish="no"
 ```
+</div>
+</details>
 
 For example, taking the `-h-bs` switch as an example, it will show different results based on the preceding switches provided:
 
 <Tabs>
-<TabItem label=" -h-bs">
+<TabItem value="" label=" -h-bs">
 ```bash
 Here is the help description for this flag:
 
@@ -134,7 +160,7 @@ Add your patches there, for example.
 ~/qbt-build/patches/qbittorrent/4.5.0/patch
 ```
 </TabItem>
-<TabItem label=" -qm -lm -h-bs">
+<TabItem value="" label=" -qm -lm -h-bs">
 ```bash
 Here is the help description for this flag:
 
@@ -147,7 +173,7 @@ Add your patches there, for example.
 ~/qbt-build/patches/qbittorrent/master/patch
 ```
 </TabItem>
-<TabItem label=" -qt release-4.2.5 -lt v2.0.3 -h-bs">
+<TabItem value="" label=" -qt release-4.2.5 -lt v2.0.3 -h-bs">
 ```bash
 Here is the help description for this flag:
 

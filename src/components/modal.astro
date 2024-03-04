@@ -1,0 +1,50 @@
+---
+const { id, label } = Astro.props;
+const buttonOpenId = id + "-open";
+const buttonOpenClose = id + "-close";
+
+const html = await Astro.slots.render('default');
+---
+
+<!-- pop-up dialog box, containing a form -->
+<dialog class="toolTipDialog" id={id}>
+    <div class="dialog-content">
+        <p>{<slot/>}</p>
+    </div>
+    <div class="dialog-button">
+        <button class="dialog-button-close" id={buttonOpenClose} type="reset">Cancel</button>
+    </div>
+</dialog>
+
+<div>
+    <button id={buttonOpenId}>{label}</button>
+</div>
+
+<script define:vars={{ id, buttonOpenId, buttonOpenClose, html }} >
+const openDialog = document.getElementById(buttonOpenId);
+const closeDialog = document.getElementById(buttonOpenClose);
+const dialog = document.getElementById(id);
+
+function clickOutside(dialog) {
+// When the user clicks anywhere outside of the dialog, close it
+window.onclick = function(event) {
+    if (event.target == dialog) {
+    dialog.close();
+    }
+}
+}
+
+// Update button opens a modal dialog
+openDialog.addEventListener("click", () => {
+    dialog.showModal();
+    clickOutside(dialog);
+});
+
+// Form cancel button closes the dialog box
+closeDialog.addEventListener("click", () => {
+    dialog.close();
+    clickOutside(dialog);
+});
+
+console.log(html);
+</script>

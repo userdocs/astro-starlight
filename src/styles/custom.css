@@ -448,3 +448,29 @@ details[open] div.custom-content {
     border-color: rgba(225, 50, 56);
     background-color: rgba(225, 50, 56, 0.05);
 }
+
+.toolTipDialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    min-width: 350px;
+    min-height: 0px;
+    height: 30%;
+    border: 2px solid rgb(146, 52, 88);
+
+}
+
+.dialog-button {}
+
+.dialog-button-close {
+    position: absolute;
+    bottom: auto;
+    border: 2px solid rgb(146, 52, 88);
+    margin: 5px;
+}
+
+button.dialog-button-close {
+    right: 0;
+}
