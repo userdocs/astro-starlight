@@ -454,10 +454,8 @@ details[open] div.custom-content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30%;
-    min-width: 350px;
-    min-height: 0px;
-    height: 30%;
+    width: auto;
+    height: auto;
     border: 2px solid rgb(146, 52, 88);
 
 }

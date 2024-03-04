@@ -3,13 +3,17 @@ const { id, label } = Astro.props;
 const buttonOpenId = id + "-open";
 const buttonOpenClose = id + "-close";
 
-const html = await Astro.slots.render('default');
+const posts = await Astro.glob('/src/content/docs/glossary/*.md');
 ---
 
 <!-- pop-up dialog box, containing a form -->
 <dialog class="toolTipDialog" id={id}>
     <div class="dialog-content">
-        <p>{<slot/>}</p>
+{posts.map((post) => (
+  <article>
+    <p set:html={post.compiledContent()}></p>
+  </article>
+))}
     </div>
     <div class="dialog-button">
         <button class="dialog-button-close" id={buttonOpenClose} type="reset">Cancel</button>
@@ -20,7 +24,7 @@ const html = await Astro.slots.render('default');
     <button id={buttonOpenId}>{label}</button>
 </div>
 
-<script define:vars={{ id, buttonOpenId, buttonOpenClose, html }} >
+<script define:vars={{ id, buttonOpenId, buttonOpenClose, posts }} >
 const openDialog = document.getElementById(buttonOpenId);
 const closeDialog = document.getElementById(buttonOpenClose);
 const dialog = document.getElementById(id);
@@ -46,5 +50,5 @@ closeDialog.addEventListener("click", () => {
     clickOutside(dialog);
 });
 
-console.log(html);
+console.log('fml', posts.frontmatter );
 </script>
