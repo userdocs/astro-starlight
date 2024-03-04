@@ -4,16 +4,16 @@ const buttonOpenId = id + "-open";
 const buttonOpenClose = id + "-close";
 
 const posts = await Astro.glob('/src/content/docs/glossary/*.md');
+
+const filtered = posts.find(post => post.file.includes(id));
 ---
 
 <!-- pop-up dialog box, containing a form -->
 <dialog class="toolTipDialog" id={id}>
     <div class="dialog-content">
-{posts.map((post) => (
   <article>
-    <p set:html={post.compiledContent()}></p>
+    <p set:html={filtered.compiledContent()}></p>
   </article>
-))}
     </div>
     <div class="dialog-button">
         <button class="dialog-button-close" id={buttonOpenClose} type="reset">Cancel</button>
@@ -24,7 +24,7 @@ const posts = await Astro.glob('/src/content/docs/glossary/*.md');
     <button id={buttonOpenId}>{label}</button>
 </div>
 
-<script define:vars={{ id, buttonOpenId, buttonOpenClose, posts }} >
+<script define:vars={{ id, buttonOpenId, buttonOpenClose }} >
 const openDialog = document.getElementById(buttonOpenId);
 const closeDialog = document.getElementById(buttonOpenClose);
 const dialog = document.getElementById(id);
@@ -49,6 +49,4 @@ closeDialog.addEventListener("click", () => {
     dialog.close();
     clickOutside(dialog);
 });
-
-console.log('fml', posts.frontmatter );
 </script>
