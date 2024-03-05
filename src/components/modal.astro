@@ -9,7 +9,7 @@ const filtered = posts.find(post => post.file.includes(id));
 ---
 
 <!-- Store the message prop as a data attribute. -->
-<astro-greet data-id={id} data-button-id={buttonId}  data-button-close={buttonClose}>
+<my-modal data-id={id} data-button-id={buttonId}  data-button-close={buttonClose}>
 <a id={buttonId}>{label}</a>
 
 <dialog class="toolTipDialog" id={id}>
@@ -23,10 +23,10 @@ const filtered = posts.find(post => post.file.includes(id));
     </div>
 </dialog>
 
-</astro-greet>
+</my-modal>
 
 <script>
-  class AstroGreet extends HTMLElement {
+  class MyModal extends HTMLElement {
     constructor() {
       super();
         const id = this.dataset.id;
@@ -61,5 +61,5 @@ const filtered = posts.find(post => post.file.includes(id));
         });
     }
   }
-customElements.define('astro-greet', AstroGreet);
+customElements.define('my-modal', MyModal);
 </script>
