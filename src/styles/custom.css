@@ -292,9 +292,16 @@ details[open] div.custom-content {
 
 /* custom details end */
 
+.my-tooltip {
+    padding-bottom: 5px !important;
+}
 
+.tooltip-link {}
 
-
+.tooltip-line {
+    display: block;
+    margin-bottom: 2px;
+}
 
 
 
