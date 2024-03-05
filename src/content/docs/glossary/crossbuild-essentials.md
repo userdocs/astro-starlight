@@ -3,10 +3,6 @@ title: Debian Crossbuild-Essentials
 hide_title: true
 ---
 
-```bash
-test
-```
-
 🔵 Native Debian and Ubuntu cross build toolchains for cross compiling, used when a supported Debian based OS is the Host.
 
 🟢 Follow link for full Glossary entry
