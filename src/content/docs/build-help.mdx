@@ -3,7 +3,7 @@ title: Build Help
 description: Build Help
 ---
 
-import { Advanced, Details, Tips } from "/src/components/global.jsx";
+import { Advanced, Details, Modal, Tooltip } from "/src/components/global.jsx"
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
 Once the script has successfully configured the platform you can execute the help switch to see how it works and what options you have available to you.
@@ -50,9 +50,7 @@ All switches and flags have a supporting help option that will provide dynamic c
 The `--boot-strap-release` and `--boot-strap-multi-arch` options are specific to GitHub actions but if you read `--help-boot-strap-release` you can see how to trigger `aarch64|armv7` builds on your local system using Alpine/Debian/Ubuntu via docker.
 :::
 
-<details class="custom-details">
-<summary class="custom-summary">Script Help Options</summary>
-<div class="custom-content">
+<Details summary="Script Help Options">
 ```bash
  Here are a list of available options
 
@@ -141,8 +139,7 @@ The `--boot-strap-release` and `--boot-strap-multi-arch` options are specific to
    qbt_standard="17"
    qbt_static_ish="no"
 ```
-</div>
-</details>
+</Details>
 
 For example, taking the `-h-bs` switch as an example, it will show different results based on the preceding switches provided:
 
