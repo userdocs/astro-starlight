@@ -3,8 +3,8 @@ title: Introduction
 description: Introduction
 ---
 
-import { Advanced, Details, Tips } from "/src/components/global.jsx";
-import { Steps, Code, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
+import { Advanced, Details, Modal, Tooltip } from "/src/components/global.jsx"
+import { Steps, Code, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon } from '@astrojs/starlight/components';
 
 ### What is it?"
 
@@ -110,9 +110,9 @@ It's highly recommend that you use a `qemu` + `binfmts` + `Docker` to build on a
 </Advanced>
 
 <Advanced client:only="react">
-This is done using <Tips client:only>Debian crossbuild essentials:crossbuild-essentials</Tips> or <Tips client:only>Musl Cross make toolchains:musl-cross-make</Tips>, depending on the host build platform.
+This is done using <Tooltip id="crossbuild-essentials" label="Debian crossbuild essentials"/> or <Tooltip id="musl-cross-make" label="Musl Cross make toolchains"/>, depending on the host build platform.
 
-Taking advantage of <Tips client:only>Github Workflows:github-workflows</Tips> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
+Taking advantage of <Tooltip id="github-workflows" label="Github Workflows" /> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
 </Advanced>
 
 :::tip[The hard part is done.]
