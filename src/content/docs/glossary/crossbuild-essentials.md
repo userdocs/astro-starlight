@@ -5,8 +5,6 @@ hide_title: true
 
 🔵 Native Debian and Ubuntu cross build toolchains for cross compiling, used when a supported Debian based OS is the Host.
 
-🟢 Follow link for full Glossary entry
-
 ---
 
 When building on supported Debian based hosts we use the official crossbuild-essential tool chains that are made specifically for cross compiling on these host operating systems.

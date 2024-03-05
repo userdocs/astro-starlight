@@ -12,6 +12,10 @@ export default function MyToolTip({ children }) {
     const localUrl = "/src/content/docs/glossary/" + toolTipChildren[1] + ".md";
     const remoteUrl = "https://raw.githubusercontent.com/userdocs/astro-starlight/main/src/content/docs/glossary/" + toolTipChildren[1] + ".md";
 
+    const theme = document.documentElement.dataset.theme
+
+    console.log("Theme: " + theme);
+
     useEffect(() => {
         fetch(localUrl)
             .then(response => {
@@ -44,26 +48,24 @@ export default function MyToolTip({ children }) {
         <>
             <a
                 id={customCssID + "-tooltip"}
-                data-tooltip-position-strategy="absolute"
                 data-tooltip-id={customCssID + "-tooltip"}
                 data-tooltip-wrapper="span"
-                data-tooltip-place="bottom-start"
-                data-tooltip-offset="30"
-                href={glossaryUrl}
                 target="_blank"
                 className="my-tooltip-url"
             >
                 {toolTipChildren[0]}
             </a>
             <Tooltip
-                className="my-tooltip"
                 noArrow="true"
-                id={customCssID + "-tooltip"}
-                float="true"
+                variant={theme}
+                place="bottom"
                 clickable="true"
+                openOnClick="true"
+                className="my-tooltip"
+                id={customCssID + "-tooltip"}
                 anchorSelect={"#" + customCssID + "-tooltip"}
                 wrapper="span"
-            ><Markdown>{GlossaryBody}</Markdown></Tooltip>
+            ><Markdown>{GlossaryBody}</Markdown> 🟢 <a href={glossaryUrl} target="_blank">Click here full Glossary entry</a></Tooltip>
         </>
     );
 }
