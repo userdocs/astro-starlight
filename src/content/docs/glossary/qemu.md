@@ -5,8 +5,6 @@ hide_title: true
 
 🔵 Qemu is a generic and open source machine emulator and virtualize. It's used when cross building so that created binaries and libs can be automatically loaded and used without host arch versions.
 
-🟢 Follow link for full Glossary entry
-
 ---
 
 We use [qemu-user-static](https://packages.ubuntu.com/lunar/qemu-user-static) and [binfmt-support](https://packages.ubuntu.com/lunar/binfmt-support) on the Github `ubuntu-latest` runners, from the [Lunar](https://releases.ubuntu.com/lunar) repo to overcome a bug in older versions.

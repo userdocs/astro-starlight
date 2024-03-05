@@ -5,8 +5,6 @@ hide_title: true
 
 🔵 A paid for alternative to self hosted runners that allow for native arm runners as well as increased cores for faster build times.
 
-🟢 Follow link for full Glossary entry
-
 ---
 
 If you really need a faster way to build you should consider this integration for your Github workflows. Self hosted runners are a complicated option where this is not.

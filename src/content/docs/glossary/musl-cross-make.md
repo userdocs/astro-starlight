@@ -5,8 +5,6 @@ hide_title: true
 
 🔵 Custom musl crossbuild toolchains based on musl.cc
 
-🟢 Follow link for full Glossary entry
-
 ---
 
 The main musl cross make is located here https://github.com/richfelker/musl-cross-make and the tools used here are derived from this.
