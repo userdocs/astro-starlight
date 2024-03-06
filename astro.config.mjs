@@ -118,12 +118,12 @@ export default defineConfig({
               link: "/github-actions",
             },
             {
-              label: "Credits",
-              link: "/credits",
-            },
-            {
               label: "Change Log",
               link: "/changelog",
+            },
+            {
+              label: "Credits",
+              link: "/credits",
             },
           ],
         },

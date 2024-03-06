@@ -22,6 +22,12 @@
 
     --url-colour: #54c59f;
     --url-colour-hover: #6cb2c7;
+
+    --code-inline-background: #674b72;
+    --code-inline-color: #aeabaf;
+    --code-inline-border: #aeabaf;
+
+    --tab-background: #ab94b4;
 }
 
 :root[data-theme='light'] {
@@ -43,11 +49,15 @@
     --sl-button-bg-secondary: #beadc9;
     --react-toggle-checked: #aa4bb3;
 
-    --details-1: #dfb4dffa;
+    --details-1: #ab94b4;
     --details-2: #4c0879;
 
     --url-colour: #aa4bb3;
     --url-colour-hover: #54c59f;
+
+    --code-inline-background: #ab94b4;
+    --code-inline-color: #002b24;
+    --code-inline-border: #002b24;
 }
 
 /* Theme adjustments */
@@ -73,16 +83,16 @@ p a:hover {
 }
 
 .sl-markdown-content code:not(:where(.not-content *)) {
-    background-color: var(--sl-color-accent);
+    background-color: var(--code-inline-background);
     border-radius: 3px;
     font-size: 0.8em;
-    color: var(--sl-color-accent-low);
-    border: 2px solid var(--sl-color-white);
+    color: var(--code-inline-color);
+    border: 2px solid var(--code-inline-border);
 }
 
 
 .sl-markdown-content ul li::marker {
-    content: "⭐ ";
+    content: "⚝ ";
 }
 
 .tab::marker {
@@ -166,7 +176,7 @@ a[aria-selected="true"] {
     border-top: 1px solid var(--sl-color-white) !important;
     border-bottom: 1px solid var(--sl-color-white) !important;
     color: var(--sl-color-black) !important;
-    background-color: var(--sl-color-gray-1);
+    background-color: var(--tab-background) !important;
 
 }
 
