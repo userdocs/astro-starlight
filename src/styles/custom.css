@@ -80,9 +80,13 @@ p a:hover {
     border: 2px solid var(--sl-color-white);
 }
 
-article ul li::marker {
-    content: "▶️ ";
-    /* FontAwesome Unicode */
+
+.sl-markdown-content ul li::marker {
+    content: "⭐ ";
+}
+
+.tab::marker {
+    content: "" !important;
 }
 
 /* resize the card svg logos */
