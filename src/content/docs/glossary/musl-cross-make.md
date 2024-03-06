@@ -3,7 +3,7 @@ title: Musl Cross Make
 hide_title: true
 ---
 
-🔵 Custom musl crossbuild toolchains based on [musl-cross-make](https://github.com/richfelker/musl-cross-make)
+🟦 Custom musl crossbuild toolchains based on [musl-cross-make](https://github.com/richfelker/musl-cross-make)
 
 ---
 

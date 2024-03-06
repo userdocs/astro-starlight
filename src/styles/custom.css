@@ -24,10 +24,14 @@
     --url-colour-hover: #6cb2c7;
 
     --code-inline-background: #674b72;
-    --code-inline-color: #aeabaf;
-    --code-inline-border: #aeabaf;
+    --code-inline-color: #c4abcc;
+    --code-inline-border: #488d84;
 
-    --tab-background: #ab94b4;
+    --tab-background-if: #ab94b4;
+    --tab-background-oof: #54385f;
+    --tab-color-if: #111011;
+    --tab-color-oof: #828285;
+    --steps-border: #aa4bb3;
 }
 
 :root[data-theme='light'] {
@@ -58,9 +62,28 @@
     --code-inline-background: #ab94b4;
     --code-inline-color: #002b24;
     --code-inline-border: #002b24;
+
+    --tab-background-if: #ab94b4;
+    --tab-background-oof: #54385f;
+    --tab-color-if: #111011;
+    --tab-color-oof: #828285;
+    --steps-border: #aa4bb3;
 }
 
 /* Theme adjustments */
+
+.sl-steps li::before {
+    border: 1px solid var(--steps-border) !important;
+    box-shadow: none !important;
+    border-radius: 0% !important;
+    line-height: 2em !important;
+}
+
+.sl-steps li::after {
+    border: 1px solid var(--steps-border) !important;
+
+}
+
 
 .right-sidebar.astro-67yu43on {
 
@@ -175,15 +198,16 @@ li.tab {
 a[aria-selected="true"] {
     border-top: 1px solid var(--sl-color-white) !important;
     border-bottom: 1px solid var(--sl-color-white) !important;
-    color: var(--sl-color-black) !important;
-    background-color: var(--tab-background) !important;
+    color: var(--tab-color-if) !important;
+    background-color: var(--tab-background-if) !important;
 
 }
 
 a[tabindex="-1"] {
     border-top: 1px solid var(--sl-button-bg-secondary) !important;
     border-bottom: 1px solid var(--sl-button-bg-secondary) !important;
-    background-color: rgb(43, 10, 33) !important;
+    background-color: var(--tab-background-oof) !important;
+    color: var(--tab-color-oof) !important;
 }
 
 /* react toggle start*/
@@ -467,6 +491,10 @@ details[open] div.custom-content {
 .starlight-aside--danger {
     border-color: rgba(225, 50, 56);
     background-color: rgba(225, 50, 56, 0.05);
+}
+
+[class*="starlight-aside--"] {
+    background-color: transparent !important;
 }
 
 .toolTipDialog {

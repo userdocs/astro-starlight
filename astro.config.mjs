@@ -4,7 +4,15 @@ import react from "@astrojs/react";
 import { ExpressiveCodeTheme } from "@astrojs/starlight/expressive-code";
 import fs from "node:fs";
 
-const jsoncString = fs.readFileSync(
+const jsoncStringLight = fs.readFileSync(
+  new URL(
+    `./src/themes/expressive-code/Snazzy-Light-color-theme.json`,
+    import.meta.url
+  ),
+  "utf-8"
+);
+
+const jsoncStringDark = fs.readFileSync(
   new URL(
     `./src/themes/expressive-code/aura-soft-dark-soft-text-color-theme.json`,
     import.meta.url
@@ -12,7 +20,8 @@ const jsoncString = fs.readFileSync(
   "utf-8"
 );
 
-const myTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
+const darkMode = ExpressiveCodeTheme.fromJSONString(jsoncStringDark);
+const lightMode = ExpressiveCodeTheme.fromJSONString(jsoncStringLight);
 
 // https://astro.build/config
 export default defineConfig({
@@ -47,7 +56,7 @@ export default defineConfig({
       expressiveCode: {
         // Pass the theme to the `themes` option
         // (consider adding a dark and light theme for accessibility)
-        themes: [myTheme, "github-light"],
+        themes: [darkMode, lightMode],
         tabWidth: 0,
         styleOverrides: {
           // You can also override styles

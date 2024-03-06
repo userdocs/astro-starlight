@@ -16,7 +16,7 @@ export default function MyToolTip({ html, id, label }) {
                 data-tooltip-wrapper="span"
                 target="_blank"
                 className="my-tooltip-url"
-                data-tooltip-html={htmlSplit[0] + '<hr class="tooltip-line">🟢 <a class="tooltip-link" href=' + glossaryUrl + ' target="_blank">Click here for the full Glossary entry</a>'}
+                data-tooltip-html={htmlSplit[0] + '<hr class="tooltip-line">🟩 <a class="tooltip-link" href=' + glossaryUrl + ' target="_blank">Click here for the full Glossary entry</a>'}
             >
                 {label}
             </a >

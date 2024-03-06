@@ -3,7 +3,7 @@ title: Qemu emulation
 hide_title: true
 ---
 
-🔵 Qemu is a generic and open source machine emulator and virtualize. It's used when cross building so that created binaries and libs can be automatically loaded and used without host arch versions.
+🟦 Qemu is a generic and open source machine emulator and virtualize. It's used when cross building so that created binaries and libs can be automatically loaded and used without host arch versions.
 
 ---
 
