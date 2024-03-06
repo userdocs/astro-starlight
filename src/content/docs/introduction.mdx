@@ -6,7 +6,7 @@ description: Introduction
 import { Advanced, Details, Modal, Tooltip, Charts } from "/src/components/global.jsx"
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
-### What is it?"
+### What is it?
 
 `qbittorrent-nox-static.sh` was originally a simple, amateurish bash script, to build a static `qbittorrent-nox` binary for `x86_64`. The script has grown and evolved since then and now it's a complicated bash script.
 
@@ -35,6 +35,12 @@ It handles a lot of the nuanced complexity around building various different dep
 3. Build a fully static and portable `qbittorrent-nox` binary which automatically uses the latest version of all supported dependencies.
 
 </Steps>
+
+<Advanced client:only="react">
+This is done using <Tooltip id="crossbuild-essentials" label="Debian crossbuild essentials"/> or <Tooltip id="musl-cross-make" label="Musl Cross make toolchains"/>, depending on the host build platform.
+
+Taking advantage of <Tooltip id="github-workflows" label="Github Workflows" /> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
+</Advanced>
 
 :::tip
 The script is highly configurable and is capable of native and cross building. These more advanced configurations will be discussed later sections.
@@ -107,12 +113,6 @@ Certain build combinations require `qemu` and `binfmts` on the host to complete 
 It's highly recommend that you use a `qemu` + `binfmts` + `Docker` to build on a local host machine with no issues
 :::
 
-</Advanced>
-
-<Advanced client:only="react">
-This is done using <Tooltip id="crossbuild-essentials" label="Debian crossbuild essentials"/> or <Tooltip id="musl-cross-make" label="Musl Cross make toolchains"/>, depending on the host build platform.
-
-Taking advantage of <Tooltip id="github-workflows" label="Github Workflows" /> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
 </Advanced>
 
 :::tip[The hard part is done.]
