@@ -38,6 +38,8 @@ function App() {
         <div className="toggle-div">
             <label for="advanced-toggle" hidden="hidden" className="toggle-label">Advanced Toggle</label>
             <Toggle
+                name="advanced-toggle"
+                aria-label="Advanced Toggle"
                 id="advanced-toggle"
                 className="toggle-toggle"
                 checked={toggle}
