@@ -19,9 +19,7 @@ const AdvMd = ({ children }) => {
             }
         }
 
-        const AdvancedTocHref = document.querySelectorAll(
-            "a.astro-g2bywc46"
-        );
+        const AdvancedTocHref = document.querySelectorAll("nav ul li a");
 
         for (let i = 0; i < AdvancedTocHref.length; i++) {
             if (AdvancedTitleList.includes(AdvancedTocHref[i].hash)) {
