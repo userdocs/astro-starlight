@@ -115,7 +115,7 @@ p a:hover {
 
 
 .sl-markdown-content ul li::marker {
-    content: "⚝ ";
+    content: "⭐ ";
 }
 
 .tab::marker {
