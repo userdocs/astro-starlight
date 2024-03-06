@@ -36,17 +36,16 @@ function App() {
 
     return (
         <div className="toggle-div">
-            <label className="toggle-label">
-                <Toggle
-                    className="toggle-toggle"
-                    checked={toggle}
-                    icons={{
-                        checked: <GiBrain />,
-                        unchecked: <MdOutlineMenuBook />,
-                    }}
-                    onChange={handleChange}
-                ></Toggle>
-            </label>
+            <Toggle
+                id="advanced-toggle"
+                className="toggle-toggle"
+                checked={toggle}
+                icons={{
+                    checked: <GiBrain />,
+                    unchecked: <MdOutlineMenuBook />,
+                }}
+                onChange={handleChange}
+            ></Toggle>
         </div >
     );
 }
