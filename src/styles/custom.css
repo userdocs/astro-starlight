@@ -19,14 +19,14 @@
 
     --details-1: #2A2A2C;
     --details-2: #543768;
-    --details-3: #aa4bb3;
+    --details-3: #54385f;
 
     --url-colour: #54c59f;
     --url-colour-hover: #6cb2c7;
 
-    --code-inline-background: #674b72;
-    --code-inline-color: #c4abcc;
-    --code-inline-border: #488d84;
+    --code-inline-background: #aa4bb3;
+    --code-inline-color: #bdbdbd;
+    --code-inline-border: #54c59f;
 
     --tab-background-if: #ab94b4;
     --tab-background-oof: #54385f;
@@ -61,8 +61,8 @@
     --url-colour: #aa4bb3;
     --url-colour-hover: #54c59f;
 
-    --code-inline-background: #ab94b4;
-    --code-inline-color: #002b24;
+    --code-inline-background: #54c59f;
+    --code-inline-color: #000000;
     --code-inline-border: #002b24;
 
     --tab-background-if: #ab94b4;
