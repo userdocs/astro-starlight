@@ -3,7 +3,7 @@ title: Introduction
 description: Introduction
 ---
 
-import { Advanced, Details, Modal, Tooltip, Charts } from "/src/components/global.jsx"
+import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/components/global.jsx"
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
 ## What is it?
@@ -24,7 +24,8 @@ It handles a lot of the nuanced complexity around building various different dep
 `mips` - `mipsel` - `mips64` - `mips64el`
 </Details>
 
-⭐ Simply put, on supported host build platforms the `qbittorrent-nox-static.sh` will perform these three main tasks:
+<Important id="important.svg" alt="important icon">
+On supported host build platforms the `qbittorrent-nox-static.sh` will perform these three main tasks:
 
 <Steps>
 
@@ -35,6 +36,8 @@ It handles a lot of the nuanced complexity around building various different dep
 3. Build a fully static and portable `qbittorrent-nox` binary which automatically uses the latest version of all supported dependencies.
 
 </Steps>
+
+</Important>
 
 <Advanced client:only="react">
 This is done using <Tooltip id="crossbuild-essentials" label="Debian crossbuild essentials"/> or <Tooltip id="musl-cross-make" label="Musl Cross make toolchains"/>, depending on the host build platform.
