@@ -519,3 +519,26 @@ details[open] div.custom-content {
 button.dialog-button-close {
     right: 0;
 }
+
+.my-icon-container {
+    border: 3px solid var(--sl-color-gray-6);
+    padding: 0px 0px 10px 10px;
+    margin-top: 25px !important;
+}
+
+.my-icon {
+    width: 100px !important;
+    max-width: 100px !important;
+}
+
+.my-icon-image {
+    margin-top: -15px !important;
+    margin-left: 0px !important;
+    width: 100px !important;
+    max-width: 100x !important;
+}
+
+.my-icon-text {
+    margin-top: 0px !important;
+    width: 100% !important;
+}
