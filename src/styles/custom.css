@@ -19,6 +19,7 @@
 
     --details-1: #2A2A2C;
     --details-2: #543768;
+    --details-3: #aa4bb3;
 
     --url-colour: #54c59f;
     --url-colour-hover: #6cb2c7;
@@ -53,8 +54,9 @@
     --sl-button-bg-secondary: #beadc9;
     --react-toggle-checked: #aa4bb3;
 
-    --details-1: #ab94b4;
+    --details-1: #a0b494;
     --details-2: #4c0879;
+    --details-3: #007d6d;
 
     --url-colour: #aa4bb3;
     --url-colour-hover: #54c59f;
@@ -288,7 +290,7 @@ a[tabindex="-1"] {
 /* details summary stuff */
 
 .custom-details {
-    background-color: var(--details-1);
+    background-color: var(--details-1) !important;
     margin: 0px;
     padding: 0px;
 
@@ -297,7 +299,7 @@ a[tabindex="-1"] {
 }
 
 .custom-summary {
-    background-color: var(--details-1);
+    background-color: var(--details-1) !important;
     padding: 10px 0px 0px 15px;
     margin-bottom: 10px;
 }
@@ -306,6 +308,7 @@ a[tabindex="-1"] {
     /* padding-top: 10px; */
     padding: 10px;
     border-top: 2px solid var(--details-2);
+    background-color: var(--details-3) !important;
 }
 
 @keyframes custom-details {
