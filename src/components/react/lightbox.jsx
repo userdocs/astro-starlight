@@ -12,9 +12,7 @@ export default function App({ path, width, height }) {
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}
-                slides={[
-                    { src: path },
-                ]}
+                slides={[{ src: path }]}
             />
         </>
     );
