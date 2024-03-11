@@ -2,9 +2,9 @@
 const { id, alt } = Astro.props;
 ---
 
-<div class="my-icon-container" >
-    <div  class="my-icon">
-        <img class=`my-icon-image ${id}` src={`/astro-starlight/icons/${id}`} alt={alt}>
+<div class=`my-icon-container ${id}` >
+    <div class=`my-icon ${id}`>
+        <img class=`my-icon-image ${id}` src={`/astro-starlight/icons/${id}.svg`} alt={alt}>
     </div>
     <div class="my-icon-text">
         <slot/>
