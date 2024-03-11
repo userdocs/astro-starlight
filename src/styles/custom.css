@@ -524,9 +524,24 @@ button.dialog-button-close {
 }
 
 .my-icon-container {
-    border: 3px solid var(--sl-color-gray-6);
     padding: 0px 0px 10px 10px;
-    margin-top: 25px !important;
+    /* margin-top: 25px !important; */
+}
+
+.my-icon-container.star-tip {
+    border: 3px solid #FFAE35;
+}
+
+.my-icon-container.note {
+    border: 3px solid #0095FF;
+}
+
+.my-icon-container.note-circle {
+    border: 3px solid #0095FF;
+}
+
+.my-icon-container.tip {
+    border: 3px solid #1FC6A0;
 }
 
 .my-icon {
@@ -535,10 +550,10 @@ button.dialog-button-close {
 }
 
 .my-icon-image {
-    margin-top: -15px !important;
-    margin-left: 0px !important;
-    width: 100px !important;
-    max-width: 100x !important;
+    margin-top: -2.5px !important;
+    margin-left: -13px !important;
+    height: 29px !important;
+    /* border: 3px solid var(--sl-color-black) !important; */
 }
 
 .my-icon-text {
