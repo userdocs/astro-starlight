@@ -6,9 +6,27 @@ hide_title: true
 import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/components/global.jsx"
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
-:::note[Github meets all the requirements]
-Github workflows can meet all these requirements to build and patch and is free to use and takes a fixed amount of time.
-:::
+⭐ The rules of engagement are:
+
+<Steps>
+
+1. Use Docker to avoid conflicts with the host system, especially with Qt. Docker is the recommended method.
+
+2. Use a supported distribution and version to build. You do not need to build on an older host to use these binaries there.
+
+3. `sudo`/`root` is not required to run the script, but it is required to install the core dependencies.
+
+4. Using additional flags and switches can add dependencies, like `-c` for cmake.
+
+5. Executing the script with no arguments will only install the dependencies and configure the build environment.
+
+6. Nothing is built until you provide the `all` or a specific module name as a positional parameter to the script.
+
+7. The script has a comprehensive built-in help system. Use `bash ~/qbittorrent-nox-static.sh -h` to see the help.
+
+8. You can fork the repo and build on Github using Github Actions to create your own custom releases.
+
+</Steps>
 
 <Advanced client:only="react">
 
@@ -20,35 +38,34 @@ For faster build times you can consider a paid service like <Tooltip id="buildje
 
 ### Prerequisite Check list
 
-If you want self host you need to be able to meet these conditions on your host in order to use the script.
+If you want to self host you need to be able to meet these conditions on your host in order to use the script.
 
-:::tip[Supported host build platforms]
+🟩 Supported host build platforms
+    - Debian: `Bullseye` `Bookworm`
+    - Ubuntu: `Focal` `Jammy` `Noble`
+    - Alpine: `3.10` or greater
 
-✅ Debian: `Bullseye` `Bookworm`
+🟩 Build environment
+    - <Tooltip id="docker" label="Docker"/> via a shell like <Tooltip id="bash" label="Bash"/> or <Tooltip id="powershell" label="Powershell"/>
+    - <Tooltip id="docker-desktop" label="Docker Desktop"/>: `Windows` `MacOS` `WSL2`
+    - WSL2
+      - Run directly in the Debian or Ubuntu image ❌ (works but not recommended)
+      - Via <Tooltip id="docker-desktop" label="Docker Desktop"/> ✅ (recommended method)
+      - Docker installed in <Tooltip id="wsl2" label="WSL2"/> image ✅ (alternative recommendation)
 
-✅ Ubuntu: `Focal` `Jammy` `Noble`
 
-✅ Alpine: `3.10` or greater
+🟩 Bash Shell script
+    - This is 100% a modern bash shell script and it requires having access to bash to run it.
 
-✅ WSL2 + docker images of the above hosts(recommended)
 
-✅ WSL2 directly using the supported hosts (not recommended if you actively use the image)
+🟧 Host permissions
 
-:::
+    - The script needs to install some system dependencies in order to proceed and if you do not have permission or access to do this or no access to docker to use a container you must find a more suitable host environment.
 
-:::caution[Bash Shell]
-✅ This is 100% a modern bash shell script and it requires having access to bash to run it.
 
-⭕ It is not posix compliant, it's not trying to be and will not run in a posix shell.
-:::
+🟥 Qt6 requirements
 
-:::caution[sudo or root privileges]
-✅ The script needs to install some system dependencies in order to proceed and if you do not have permission or access to do this or no access to docker to use a container you must find a more suitable host environment.
-:::
-
-:::caution[Emulation requirements]
-
-✅ If you build using Qt6 you will need to have these dependencies installed on the host, [qemu and binmtfs](glossary/qemu)
+    - If you build using Qt6 you will need to have these dependencies installed on the host, <Tooltip id="qemu" label="qemu and binmtfs"/>
 
 <Tabs>
 <TabItem value="Debian based Linux" label="debian">
@@ -66,5 +83,3 @@ sudo apk add qemu qemu-openrc
 
 </TabItem>
 </Tabs>
-
-:::

@@ -1,7 +1,7 @@
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
-export default function MyToolTip({ html, id, label, basePath }) {
+export default function MyToolTip({ html, id, label, basePath, test }) {
 
     const htmlSplit = html.toString().split("<hr>");
     const theme = document.documentElement.dataset.theme
@@ -23,7 +23,7 @@ export default function MyToolTip({ html, id, label, basePath }) {
             <Tooltip
                 noArrow="true"
                 variant={theme}
-                place="bottom-end"
+                place="right"
                 clickable="true"
                 openOnClick="true"
                 className="my-tooltip"

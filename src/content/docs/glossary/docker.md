@@ -1,11 +1,10 @@
 ---
-id: docker
-title: Docker
-hoverText: Docker this and that
+title: Docker Cli
+hide_title: true
 ---
 
-🟦 This is a more detailed explanation for the term. The `hoverText` metadata provides a preview of the explanation.
+🟦 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker's methodologies for shipping, testing, and deploying code, you can significantly reduce the delay between writing code and running it in production.
 
 ---
 
-More info
+[Installation Docs](https://docs.docker.com/engine/install/)

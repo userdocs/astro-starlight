@@ -134,6 +134,10 @@ export default defineConfig({
               label: "Credits",
               link: "/credits",
             },
+            {
+              label: "Glossary",
+              link: "/glossary",
+            },
           ],
         },
       ],

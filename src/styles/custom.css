@@ -116,6 +116,10 @@ p a:hover {
 }
 
 
+.sl-markdown-content p ul li::marker {
+    content: "🌟 ";
+}
+
 .sl-markdown-content ul li::marker {
     content: "⭐ ";
 }
@@ -599,4 +603,13 @@ button.dialog-button-close {
 .my-icon-text {
     margin-top: 0px !important;
     width: 100% !important;
+}
+
+.my-tooltip-url {
+    color: var(--url-colour) !important;
+}
+
+.my-tooltip-url:hover {
+    color: var(--url-colour-hover) !important;
+    cursor: pointer;
 }

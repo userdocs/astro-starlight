@@ -1,5 +1,5 @@
 ---
-title: github-releases
+title: Github Releases
 hide_title: true
 ---
 
