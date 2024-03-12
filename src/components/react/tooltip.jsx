@@ -1,12 +1,12 @@
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
-export default function MyToolTip({ html, id, label }) {
+export default function MyToolTip({ html, id, label, basePath }) {
 
     const htmlSplit = html.toString().split("<hr>");
     const theme = document.documentElement.dataset.theme
     const customCssID = id;
-    const glossaryUrl = "/astro-starlight/glossary/" + id;
+    const glossaryUrl = basePath + "glossary/" + id;
 
     return (
         <>
@@ -23,14 +23,15 @@ export default function MyToolTip({ html, id, label }) {
             <Tooltip
                 noArrow="true"
                 variant={theme}
-                place="bottom"
+                place="bottom-end"
                 clickable="true"
                 openOnClick="true"
                 className="my-tooltip"
                 id={customCssID + "-tooltip"}
                 anchorSelect={"#" + customCssID + "-tooltip"}
                 wrapper="span"
-            ></Tooltip>
+                positionStrategy="absolute"
+            ></Tooltip >
         </>
     );
 }

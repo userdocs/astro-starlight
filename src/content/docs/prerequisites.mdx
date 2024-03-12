@@ -3,8 +3,8 @@ title: Prerequisite Check list
 hide_title: true
 ---
 
-import { Advanced, Details, Tips } from "/src/components/global.jsx";
-import { Steps, Code, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon } from '@astrojs/starlight/components';
+import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/components/global.jsx"
+import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 
 :::note[Github meets all the requirements]
 Github workflows can meet all these requirements to build and patch and is free to use and takes a fixed amount of time.
@@ -13,7 +13,7 @@ Github workflows can meet all these requirements to build and patch and is free 
 <Advanced client:only="react">
 
 :::tip[Optional - Paid service for faster build times]
-For faster build times you can consider a paid service like [buildjet.com](glossary/buildjet) to use as self hosted runners with the Github Actions
+For faster build times you can consider a paid service like <Tooltip id="buildjet" label="buildjet.com "/> to use as self hosted runners with the Github Actions
 :::
 
 </Advanced >
@@ -26,7 +26,7 @@ If you want self host you need to be able to meet these conditions on your host 
 
 ✅ Debian: `Bullseye` `Bookworm`
 
-✅ Ubuntu: `Focal` `Jammy` `Mantic`
+✅ Ubuntu: `Focal` `Jammy` `Noble`
 
 ✅ Alpine: `3.10` or greater
 

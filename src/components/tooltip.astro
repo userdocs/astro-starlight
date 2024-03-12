@@ -4,6 +4,7 @@ const { id, label } = Astro.props;
 
 const posts = await Astro.glob('/src/content/docs/glossary/*.md');
 const filtered = posts.find(post => post.file.includes(id));
+const basePath = "/" + Astro.url.pathname.split("/")[1] + "/";
 ---
 
-<MyToolTip id={id} label={label} slot="test" html={filtered.compiledContent()} client:only></MyToolTip>
+<MyToolTip id={id} label={label} slot="test" html={filtered.compiledContent()} basePath={basePath} client:only></MyToolTip>

@@ -265,6 +265,8 @@ a[tabindex="-1"] {
 /* react tooltip end */
 
 .my-tooltip {
+    position: absolute !important;
+    z-index: 9999 !important;
     max-width: 400px;
     max-height: 400px;
     border: 2px solid var(--react-toggle-checked);
@@ -486,6 +488,12 @@ details[open] div.custom-content {
     background-color: rgba(0, 148, 0, 0.05);
 }
 
+.starlight-aside__title {
+    margin-top: -8px !important;
+    margin-left: 0px !important;
+    margin-bottom: -5px !important;
+}
+
 .starlight-aside--caution {
     border-color: rgba(230, 167, 0);
     background-color: rgba(230, 167, 0, 0.05);
@@ -494,6 +502,11 @@ details[open] div.custom-content {
 .starlight-aside--danger {
     border-color: rgba(225, 50, 56);
     background-color: rgba(225, 50, 56, 0.05);
+}
+
+.starlight-aside__content {
+    margin-bottom: -10px !important;
+    padding-bottom: 0px !important;
 }
 
 [class*="starlight-aside--"] {
@@ -532,11 +545,15 @@ button.dialog-button-close {
     border: 3px solid #FFAE35;
 }
 
-.my-icon-container.note {
-    border: 3px solid #0095FF;
+.my-icon-container.danger {
+    border: 3px solid #BA1522;
 }
 
-.my-icon-container.note-circle {
+.my-icon-container.warning {
+    border: 3px solid #FFAE35;
+}
+
+.my-icon-container.note {
     border: 3px solid #0095FF;
 }
 
@@ -550,10 +567,33 @@ button.dialog-button-close {
 }
 
 .my-icon-image {
-    margin-top: -2.5px !important;
     margin-left: -13px !important;
-    height: 29px !important;
+    height: 30px !important;
     /* border: 3px solid var(--sl-color-black) !important; */
+}
+
+.my-icon-image.tip {
+    margin-top: -3.6px !important;
+    margin-left: -12.5px !important;
+}
+
+.my-icon-image.note {
+    margin-top: -2.5px !important;
+    margin-left: -12px !important;
+}
+
+.my-icon-image.star-tip {
+    margin-top: -2.5px !important;
+}
+
+.my-icon-image.warning {
+    margin-top: -3.6px !important;
+    margin-left: -12px !important;
+}
+
+.my-icon-image.danger {
+    margin-top: -2.5px !important;
+    margin-left: -12px !important;
 }
 
 .my-icon-text {

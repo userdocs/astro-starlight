@@ -8,7 +8,7 @@ import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@a
 
 ## What is it?
 
-`qbittorrent-nox-static.sh` was originally a simple, amateurish bash script, to build a static `qbittorrent-nox` binary for `x86_64`. The script has grown and evolved since then and now it's a complicated bash script.
+`qbittorrent-nox-static.sh™`  was originally a simple, amateurish bash script, to build a static `qbittorrent-nox` binary for `x86_64`. The script has grown and evolved since then and now it's a complicated bash script.
 
 ### What does it do?
 
@@ -24,30 +24,19 @@ It handles a lot of the nuanced complexity around building various different dep
 `mips` - `mipsel` - `mips64` - `mips64el`
 </Details>
 
-<Important id="star-tip" alt="important icon">
-On supported host build platforms the `qbittorrent-nox-static.sh` will perform these three main tasks:
+⭐ On supported host build platforms the `qbittorrent-nox-static.sh` will perform these three main tasks via simple prompt:
 
 <Steps>
 
-1. Update the system and install the core build dependencies based on activated options - Requires root privileges if any dependencies are missing.
+1. Update the system and install the core build dependencies, based on activated options - Requires root privileges if any dependencies are missing.
 
-2. Download and build the `qbittorrent-nox` and all dependencies locally with no special privileges required.
+2. Download all dependencies locally and build `qbittorrent-nox` with no special privileges required.
 
-3. Build a fully static and portable `qbittorrent-nox` binary which automatically uses the latest version of all supported dependencies.
+3. Build a fully static and portable `qbittorrent-nox` binary which built useing the latest version of all supported dependencies.
 
 </Steps>
 
-</Important>
-
-<Advanced client:only="react">
-This is done using <Tooltip id="crossbuild-essentials" label="Debian crossbuild essentials"/> or <Tooltip id="musl-cross-make" label="Musl Cross make toolchains"/>, depending on the host build platform.
-
-Taking advantage of <Tooltip id="github-workflows" label="Github Workflows" /> it has been designed to easily forked and reused. Fork it, customise it and build and release your own binaries.
-</Advanced>
-
-:::tip
 The script is highly configurable and is capable of native and cross building. These more advanced configurations will be discussed later sections.
-:::
 
 ### What is the outcome
 
@@ -66,7 +55,7 @@ zlib: 1.2.13.zlib-ng
 <Tabs>
 <TabItem label="Debian and Ubuntu Linux">
 
-The script creates a fully static `qbittorrent-nox` binary using [libc](https://www.gnu.org/software/libc/)
+The script creates a fully static `qbittorrent-nox` binary using <Tooltip id="glibc" label="glibc"/>
 
 The final result will show this when using `ldd`
 
@@ -83,7 +72,7 @@ not a dynamic executable
 </TabItem>
 <TabItem label="Alpine Linux">
 
-The script creates a fully static `qbittorrent-nox` binary using [musl](https://wiki.musl-libc.org/)
+The script creates a fully static `qbittorrent-nox` binary using <Tooltip id="muslc" label="musl libc"/>
 
 The final result will show this when using `ldd`
 
@@ -107,16 +96,6 @@ The script can do a lot of helpful things to make building and deploying a fully
 ### How do I use it?
 
 The script can be downloaded locally and run on a supported host or via docker. It has a comprehensive help section built in, available via the `-h` flag, that explains all options and demonstrates dynamic command choices. The best thing to do is read the script installation and usage sections to understand the key features and how to user them.
-
-<Advanced client:only="react">
-
-:::caution
-Certain build combinations require `qemu` and `binfmts` on the host to complete successfully.
-
-It's highly recommend that you use a `qemu` + `binfmts` + `Docker` to build on a local host machine with no issues
-:::
-
-</Advanced>
 
 :::tip[The hard part is done.]
 You always have a easy method available to you to build your own releases, simply by forking the repo and using the available workflows. How to do this will be shown in the [Github Actions](github-actions) sections later on. You can build locally or fork the repo and build and release using CI where the git repo acts as a local environment to the script.
