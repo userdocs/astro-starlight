@@ -7,9 +7,15 @@ import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/compo
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 import Tippy from "/src/components/tippy.astro"
 
+<Advanced client:only="react">
+<Tippy client:only />
+</Advanced>
+
+<hr/>
+<hr/>
 
 <Advanced client:only="react">
-<Tippy id="bash" label="bash"/>
+<Tippy id="bash" label="bash" />
 <Tippy id="buildjet" label="buildjet"/>
 <Tippy id="muslc" label="musl libc"/>
 <Tippy id="glibc" label="glibc"/>
@@ -17,17 +23,12 @@ import Tippy from "/src/components/tippy.astro"
 </Advanced>
 
 <hr/>
+<hr/>
 
-<Tippy id="bash" label="bash"/>
+<Advanced client:only="react">
+<Tippy id="bash" label="bash" />
 <Tippy id="buildjet" label="buildjet"/>
 <Tippy id="muslc" label="musl libc"/>
 <Tippy id="glibc" label="glibc"/>
 <Tippy id="github-actions" label="Github Actions"/>
-
-<hr/>
-
-<Tooltip id="bash" label="bash"/>
-<Tooltip id="buildjet" label="buildjet"/>
-<Tooltip id="muslc" label="musl libc"/>
-<Tooltip id="glibc" label="glibc"/>
-<Tooltip id="github-actions" label="Github Actions"/>
+</Advanced>
