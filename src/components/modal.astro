@@ -9,7 +9,7 @@ const filtered = posts.find(post => post.file.includes(id));
 ---
 
 <!-- Store the message prop as a data attribute. -->
-<my-modal data-id={id} data-button-id={buttonId}  data-button-close={buttonClose}>
+<my-modal data-tippy-maxWidth="100" data-id={id} data-button-id={buttonId}  data-button-close={buttonClose}>
 <a id={buttonId}>{label}</a>
 
 <dialog class="toolTipDialog" id={id}>

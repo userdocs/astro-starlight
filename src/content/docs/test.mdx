@@ -3,39 +3,31 @@ title: test
 hide_title: true
 ---
 
-import Test from "/src/components/important.astro"
-import Lightbox from "/src/components/lightbox.astro"
-import Details from "/src/components/details.astro"
-
-:::tip
-The way to move the layer is with the Move Tool. This is usually the second tool from the top in the Tools Palette on the left of the interface. The icon shows a black arrow with a white outline. When selected, you can use the Move Tool to click and drag objects into a new position on the image canvas.
-:::
-
-:::note
-The way to move the layer is with the Move Tool. This is usually the second tool from the top in the Tools Palette on the left of the interface. The icon shows a black arrow with a white outline. When selected, you can use the Move Tool to click and drag objects into a new position on the image canvas.
-:::
-
-:::caution
-The way to move the layer is with the Move Tool. This is usually the second tool from the top in the Tools Palette on the left of the interface. The icon shows a black arrow with a white outline. When selected, you can use the Move Tool to click and drag objects into a new position on the image canvas.
-:::
-
-:::danger
-The way to move the layer is with the Move Tool. This is usually the second tool from the top in the Tools Palette on the left of the interface. The icon shows a black arrow with a white outline. When selected, you can use the Move Tool to click and drag objects into a new position on the image canvas.
-:::
-
-<Details summary="What to expect">![](/astro-starlight/docs_images/script_usage/1.png)</Details>
-
-<Details summary="What to expect"><Lightbox width="200" height="" path="/astro-starlight/docs_images/script_usage/1.png"/></Details>
+import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/components/global.jsx"
+import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
+import Tippy from "/src/components/tippy.astro"
 
 
-```mdx
-# Hello, world!
+<Advanced client:only="react">
+<Tippy id="bash" label="bash"/>
+<Tippy id="buildjet" label="buildjet"/>
+<Tippy id="muslc" label="musl libc"/>
+<Tippy id="glibc" label="glibc"/>
+<Tippy id="github-actions" label="Github Actions"/>
+</Advanced>
 
-<div className="note">
-  > Some notable things in a block quote!
-</div>
-```
+<hr/>
 
-<div className="note">
-  > Some notable things in a block quote!
-</div>
+<Tippy id="bash" label="bash"/>
+<Tippy id="buildjet" label="buildjet"/>
+<Tippy id="muslc" label="musl libc"/>
+<Tippy id="glibc" label="glibc"/>
+<Tippy id="github-actions" label="Github Actions"/>
+
+<hr/>
+
+<Tooltip id="bash" label="bash"/>
+<Tooltip id="buildjet" label="buildjet"/>
+<Tooltip id="muslc" label="musl libc"/>
+<Tooltip id="glibc" label="glibc"/>
+<Tooltip id="github-actions" label="Github Actions"/>
