@@ -1,11 +1,90 @@
 ---
-const html = await Astro.slots.render('default');
-const regex = /id=/g;
-const fixed = html.replace(regex, 'class="Advanced-class" id=');
 
 ---
 
-{fixed}
+<input data-advanced-input type="checkbox" id="switch" /><label for="switch"
+  >Toggle</label
+>
 
-<Fragment set:html={fixed} />
+<script>
+  function App() {
+    const input = document.querySelector("[data-advanced-input]");
+    const toggle = localStorage.getItem("advanced");
 
+    if (toggle === "false") {
+      input.checked = false;
+      for (let element of document.getElementsByClassName("Advanced-class")) {
+        element.style.display = "none";
+      }
+    } else {
+      input.checked = true;
+      for (let element of document.getElementsByClassName("Advanced-class")) {
+        element.style.display = "block";
+      }
+    }
+    console.log(toggle);
+  }
+
+  App();
+  const input = document.querySelectorAll("[data-advanced-input]");
+  input.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.checked) {
+        localStorage.setItem("advanced", "true");
+      } else {
+        localStorage.setItem("advanced", "false");
+      }
+      App();
+    });
+  });
+</script>
+
+<style>
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 60px;
+    height: 40px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  label:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 90px;
+  }
+
+  input:checked + label {
+    background: #bada55;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+  }
+
+  // centering
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>

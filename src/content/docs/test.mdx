@@ -7,13 +7,23 @@ import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/compo
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
 import Tippy from "/src/components/tippy.astro"
 
-<Advanced client:only="react">
-<Tooltip id="bash" label="bash" /> test
-<Tooltip id="buildjet" label="buildjet"/> test
-<Tooltip id="muslc" label="musl libc"/> test
-<Tooltip id="glibc" label="glibc"/> test
-<Tooltip id="github-actions" label="Github Actions"/> test
-</Advanced>
+import Test from "/src/components/advancedMarkdown.astro"
+
+<Test>
+<Tippy id="bash" label="bash" />
+<Tippy id="buildjet" label="buildjet"/>
+<Tippy id="muslc" label="musl libc"/>
+<Tippy id="glibc" label="glibc"/>
+<Tippy id="github-actions" label="Github Actions"/>
+
+## saafa
+
+### affsdgsd
+
+#### asdfasf
+
+## sfsfsaf
+</Test>
 
 <hr/>
 <hr/>
