@@ -36,7 +36,7 @@ function App() {
 
     return (
         <div className="toggle-div">
-            <label for="advanced-toggle" hidden="hidden" className="toggle-label">Advanced Toggle</label>
+            <label htmlFor="advanced-toggle" hidden="hidden" className="toggle-label">Advanced Toggle</label>
             <Toggle
                 name="advanced-toggle"
                 aria-label="Advanced Toggle"
