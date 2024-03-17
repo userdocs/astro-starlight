@@ -15,14 +15,51 @@
       const advancedState = localStorage.getItem("advanced");
 
       const elements = document.getElementsByClassName(
-        "Advanced-class"
+        "advanced-title"
       ) as HTMLCollectionOf<HTMLElement>;
       for (let element of elements) {
         element.style.display = advancedState === "false" ? "none" : "block";
       }
 
       input.checked = advancedState !== "false";
-      console.log(advancedState);
+
+      const AdvancedTitleList = [];
+      const AdvancedTocList = [];
+      const DefaultTocList = [];
+      const HideTheseTocs = document.querySelectorAll(
+        ".advanced-title h1, .advanced-title h2,.advanced-title h3,.advanced-title h4,.advanced-title h5,.advanced-title h6"
+      );
+
+      if (HideTheseTocs !== null) {
+        for (let i = 0; i < HideTheseTocs.length; i++) {
+          let AdvancedTitleId = HideTheseTocs[i].id;
+          AdvancedTitleList.push("#" + AdvancedTitleId);
+        }
+      }
+
+      const AdvancedTocHref = document.querySelectorAll(
+        "starlight-toc nav ul li a"
+      );
+
+      for (let i = 0; i < AdvancedTocHref.length; i++) {
+        if (AdvancedTitleList.includes(AdvancedTocHref[i].hash)) {
+          AdvancedTocList.push(AdvancedTocHref[i]);
+        } else {
+          DefaultTocList.push(AdvancedTocHref[i]);
+        }
+      }
+
+      for (let i = 0; i < DefaultTocList.length; i++) {
+        DefaultTocList[i].classList.add("default-toc-show");
+      }
+
+      for (let i = 0; i < AdvancedTocList.length; i++) {
+        AdvancedTocList[i].classList.add("Advanced-class");
+
+        for (let element of document.getElementsByClassName("Advanced-class")) {
+          element.style.display = advancedState === "false" ? "none" : "block";
+        }
+      }
     }
 
     toggleAdvancedClass();
