@@ -5,10 +5,8 @@ hide_title: true
 
 import { Advanced, Details, Modal, Tooltip, Charts, Important } from "/src/components/global.jsx"
 import { Steps, Tabs, TabItem, Card, CardGrid, LinkCard, Aside, Icon  } from '@astrojs/starlight/components';
-import Tippy from "/src/components/tippy.astro"
 
-import Test from "/src/components/advancedMarkdown.astro"
-
+<Details>
 ## 2142121
 
 ### 5553453
@@ -17,23 +15,31 @@ import Test from "/src/components/advancedMarkdown.astro"
 
 ## 88676776
 
-<Test>
+<Advanced>
 ## saafa
+
+<Important id="tip">ho no</Important>
+<Important id="note">ho no</Important>
+<Important id="warning">ho no</Important>
+<Important id="danger">ho no</Important>
+
 
 ### affsdgsd
 
 #### asdfasf
 
 ## sfsfsaf
-</Test>
+</Advanced>
 
 <hr/>
 <hr/>
 
-<Test>
-<Tippy id="bash" label="bash" />
-<Tippy id="buildjet" label="buildjet"/>
-<Tippy id="muslc" label="musl libc"/>
-<Tippy id="glibc" label="glibc"/>
-<Tippy id="github-actions" label="Github Actions"/>
-</Test>
+<Advanced>
+<Tooltip id="bash" label="bash" />
+<Tooltip id="buildjet" label="buildjet"/>
+<Tooltip id="muslc" label="musl libc"/>
+<Tooltip id="glibc" label="glibc"/>
+<Tooltip id="github-actions" label="Github Actions"/>
+</Advanced>
+
+</Details>
