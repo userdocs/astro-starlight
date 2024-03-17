@@ -9,25 +9,21 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     function toggleAdvancedClass() {
-      const input = document.querySelector(
-        "[data-advanced-input]"
-      ) as HTMLInputElement;
-      const advancedState = localStorage.getItem("advanced");
+      let input = document.querySelector("[data-advanced-input]");
+      let advancedState = localStorage.getItem("advanced");
+      let elements = document.getElementsByClassName("advanced-title");
 
-      const elements = document.getElementsByClassName(
-        "advanced-title"
-      ) as HTMLCollectionOf<HTMLElement>;
       for (let element of elements) {
         element.style.display = advancedState === "false" ? "none" : "block";
       }
 
       input.checked = advancedState !== "false";
 
-      const AdvancedTitleList = [];
-      const AdvancedTocList = [];
-      const DefaultTocList = [];
-      const HideTheseTocs = document.querySelectorAll(
-        ".advanced-title h1, .advanced-title h2,.advanced-title h3,.advanced-title h4,.advanced-title h5,.advanced-title h6"
+      let AdvancedTitleList = [];
+      let AdvancedTocList = [];
+      let DefaultTocList = [];
+      let HideTheseTocs = document.querySelectorAll(
+        ".advanced-title h1, .advanced-title h2, .advanced-title h3, .advanced-title h4, .advanced-title h5, .advanced-title h6"
       );
 
       if (HideTheseTocs !== null) {
@@ -37,7 +33,7 @@
         }
       }
 
-      const AdvancedTocHref = document.querySelectorAll(
+      let AdvancedTocHref = document.querySelectorAll(
         "starlight-toc nav ul li a"
       );
 
@@ -55,7 +51,6 @@
 
       for (let i = 0; i < AdvancedTocList.length; i++) {
         AdvancedTocList[i].classList.add("Advanced-class");
-
         for (let element of document.getElementsByClassName("Advanced-class")) {
           element.style.display = advancedState === "false" ? "none" : "block";
         }
@@ -64,9 +59,7 @@
 
     toggleAdvancedClass();
 
-    const input = document.querySelector(
-      "[data-advanced-input]"
-    ) as HTMLInputElement;
+    let input = document.querySelector("[data-advanced-input]");
     input.addEventListener("click", () => {
       localStorage.setItem("advanced", input.checked ? "true" : "false");
       toggleAdvancedClass();
