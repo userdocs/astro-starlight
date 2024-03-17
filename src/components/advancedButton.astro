@@ -7,34 +7,32 @@
 >
 
 <script>
-  function App() {
-    const input = document.querySelector("[data-advanced-input]");
-    const toggle = localStorage.getItem("advanced");
+  document.addEventListener("DOMContentLoaded", function () {
+    function toggleAdvancedClass() {
+      const input = document.querySelector(
+        "[data-advanced-input]"
+      ) as HTMLInputElement;
+      const advancedState = localStorage.getItem("advanced");
 
-    if (toggle === "false") {
-      input.checked = false;
-      for (let element of document.getElementsByClassName("Advanced-class")) {
-        element.style.display = "none";
+      const elements = document.getElementsByClassName(
+        "Advanced-class"
+      ) as HTMLCollectionOf<HTMLElement>;
+      for (let element of elements) {
+        element.style.display = advancedState === "false" ? "none" : "block";
       }
-    } else {
-      input.checked = true;
-      for (let element of document.getElementsByClassName("Advanced-class")) {
-        element.style.display = "block";
-      }
+
+      input.checked = advancedState !== "false";
+      console.log(advancedState);
     }
-    console.log(toggle);
-  }
 
-  App();
-  const input = document.querySelectorAll("[data-advanced-input]");
-  input.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.checked) {
-        localStorage.setItem("advanced", "true");
-      } else {
-        localStorage.setItem("advanced", "false");
-      }
-      App();
+    toggleAdvancedClass();
+
+    const input = document.querySelector(
+      "[data-advanced-input]"
+    ) as HTMLInputElement;
+    input.addEventListener("click", () => {
+      localStorage.setItem("advanced", input.checked ? "true" : "false");
+      toggleAdvancedClass();
     });
   });
 </script>
@@ -78,13 +76,5 @@
   }
 
   label:active:after {
-  }
-
-  // centering
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
   }
 </style>
