@@ -2,8 +2,9 @@
 
 ---
 
-<input data-advanced-input type="checkbox" id="switch" /><label for="switch"
-  >Toggle</label
+<input data-advanced-input type="checkbox" class="toggle" id="switch" /><label
+  for="switch"
+  hidden="hidden">Toggle</label
 >
 
 <script>
@@ -73,46 +74,41 @@
   });
 </script>
 
-<style>
-  input[type="checkbox"] {
-    height: 0;
-    width: 0;
-    visibility: hidden;
-  }
+<style lang="sass">
+  input[type="checkbox"]
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    -webkit-tap-highlight-color: transparent
+    cursor: pointer
+    &:focus
+      outline: 0
 
-  label {
-    padding: 0% 0% 0% 0% !important;
-    margin: 0px 0px 36px 0px !important;
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 50px;
-    height: 30px;
-    background: grey;
-    display: block;
-    border-radius: 100px;
-    position: relative;
-  }
-
-  label:after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 90px;
-  }
-
-  input:checked + label {
-    background: #bada55;
-  }
-
-  input:checked + label:after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-  }
-
-  label:active:after {
-  }
+  .toggle
+    height: 26px
+    width: 46px
+    border-radius: 16px
+    display: inline-block
+    position: relative
+    border: 2px solid #474755
+    background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%)
+    transition: all .2s ease
+    border-color: #aa4bb3
+    &:after
+      content: ''
+      position: absolute
+      top: 2px
+      left: 2px
+      width: 18px
+      height: 18px
+      border-radius: 50%
+      background: #C7A06F
+      box-shadow: 0 1px 2px rgba(44,44,44,.2)
+      transition: all .0s cubic-bezier(.5,.1,.75,1.35)
+    &:checked
+      border-color: #54C59F
+      &:after
+        content: ''
+        background: #8464C6
+        transform: translatex(20px)
 </style>
