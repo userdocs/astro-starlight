@@ -17,7 +17,9 @@
         element.style.display = advancedState === "false" ? "none" : "block";
       }
 
-      input.checked = advancedState !== "false";
+      if (input) {
+        input.checked = advancedState !== "false";
+      }
 
       let AdvancedTitleList = [];
       let AdvancedTocList = [];
@@ -51,7 +53,9 @@
 
       for (let i = 0; i < AdvancedTocList.length; i++) {
         AdvancedTocList[i].classList.add("Advanced-class");
-        for (let element of document.getElementsByClassName("Advanced-class")) {
+        let advancedElements =
+          document.getElementsByClassName("Advanced-class");
+        for (let element of advancedElements) {
           element.style.display = advancedState === "false" ? "none" : "block";
         }
       }
@@ -60,10 +64,12 @@
     toggleAdvancedClass();
 
     let input = document.querySelector("[data-advanced-input]");
-    input.addEventListener("click", () => {
-      localStorage.setItem("advanced", input.checked ? "true" : "false");
-      toggleAdvancedClass();
-    });
+    if (input) {
+      input.addEventListener("click", () => {
+        localStorage.setItem("advanced", input.checked ? "true" : "false");
+        toggleAdvancedClass();
+      });
+    }
   });
 </script>
 
